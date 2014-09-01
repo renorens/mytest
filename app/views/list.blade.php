@@ -1,0 +1,9 @@
+@section('ulChilds')
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+@stop

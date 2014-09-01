@@ -1,0 +1,1 @@
+/var/www/TheDoctor/app/views/Clinics/edit.blade.php
