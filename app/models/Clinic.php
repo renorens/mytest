@@ -15,7 +15,6 @@ class Clinic extends \Eloquent {
 		return $this->hasMany('User');
 	}
 
-
 	public function appointments()
     {
     	return $this->hasMany('Appointment');

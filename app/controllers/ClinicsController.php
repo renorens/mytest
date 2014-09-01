@@ -14,9 +14,11 @@ class ClinicsController extends \BaseController {
 		return View::make('Clinics.index', compact('clinics'));
 	}
 
-	public function showMyClinic($user, $appointments, $clinic)
+	public function showMyClinic()
 	{
-		dd($user);
+		$user = Confide::user();
+		$clinic = Clinic::find($user->clinic_id)->with('appointments')->first();
+		$appointments = $clinic->appointments()->get();	
 		return View::make('Clinics.myClinic', array('user'=>$user, 'appointments'=>$appointments, 'clinic'=>$clinic));
 	}
 

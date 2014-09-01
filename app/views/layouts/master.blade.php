@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Doctor</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+		<link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
 	</head>
     <body>
@@ -25,15 +26,20 @@
 		        <li><a href="contact"><b>Contact Us</b></a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		    
-		        <li><a href="login" class="btn btn-primary btn-lg">Login</a></li>
-		   
+		    	@if (Confide::user())
+		        	<li><a href="myClinic" class="btn btn-primary btn-lg">My Clinic / </a></li>
+		        	<li><a href="users/logout" class="btn btn-danger">Log Out </a></li>
+		   		@else
+		   			<li><a href="login" class="btn btn-primary btn-lg">Login</a></li>
+		   		@endif
 	            <li><a href="#" class="btn btn-success"><b>عربي</b></a></li>
 			  </ul>
 		    </div>
 	    </div>
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 <script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}" />
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootswatch.js') }}"></script>
 <script>
 	$('.nav li').click(function () {
 		// alert('df');
