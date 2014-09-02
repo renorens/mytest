@@ -20,7 +20,7 @@
 		  <div class="navbar-collapse collapse navbar-inverse-collapse">
 		    <ul class="nav navbar-nav">
 		      <li class="dropdown">
-		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments <b class="caret"></b></a>
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('static.appointments') }}<b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		          <li><a href="#">Action</a></li>
 		          <li><a href="#">Another action</a></li>
