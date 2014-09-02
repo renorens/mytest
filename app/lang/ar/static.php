@@ -6,10 +6,10 @@ return array(
     'appointments' => 'المواعيد',
     'patients' => 'المرضى',
     'services' => 'خدمات',
-    'plans' => '',
-    'tips' => '',
-    'contact' => '',
-    'myclinic' => '',
-    'logout' => '',
-    'login' => ''
+    'plans' => 'عروضنا',
+    'tips' => 'نصائح طبية',
+    'contact' => 'اتصل بنا',
+    'myclinic' => 'عيادتي',
+    'logout' => 'خروج',
+    'login' => 'دخول'
 );
