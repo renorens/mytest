@@ -19,7 +19,7 @@
 		    </div>
 		    <div class="navbar-collapse collapse navbar-responsive-collapse">
 		      <ul class="nav navbar-nav">
-		      	<li><a href="/"><b>Home</b></a></li>
+		      	<li><a href="/"><b>{{ trans('static.home') }}</b></a></li>
 		        <li><a href="services"><b>Services</b></a></li>
 		        <li><a href="plans"><b>Enrollment Plans</b></a></li>
 		        <li><a href="healthTips"><b>Health Tips</b></a></li>

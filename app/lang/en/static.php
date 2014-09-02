@@ -1,6 +1,8 @@
 <?php
 
 return array(
+	'home' => 'Home',
     'title' => 'Welcome',
-    'appointments' => 'Appointments'
+    'appointments' => 'Appointments',
+    'patients' => 'Patients'
 );

@@ -32,7 +32,7 @@
 		        </ul>
 		      </li>
 		      <li class="dropdown">
-		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Patients <b class="caret"></b></a>
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('static.patients') }}<b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		          <li><a href="#">Action</a></li>
 		          <li><a href="#">Another action</a></li>
@@ -48,7 +48,7 @@
 		      <input type="text" class="form-control col-lg-8" placeholder="Search Patients">
 		    </form>
 		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="/">Home</a></li>
+		      <li><a href="/">{{ trans('static.home') }}</a></li>
 		      <li class="dropdown">
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Billing <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
