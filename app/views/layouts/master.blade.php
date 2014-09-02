@@ -20,17 +20,17 @@
 		    <div class="navbar-collapse collapse navbar-responsive-collapse">
 		      <ul class="nav navbar-nav">
 		      	<li><a href="/"><b>{{ trans('static.home') }}</b></a></li>
-		        <li><a href="services"><b>Services</b></a></li>
-		        <li><a href="plans"><b>Enrollment Plans</b></a></li>
-		        <li><a href="healthTips"><b>Health Tips</b></a></li>
-		        <li><a href="contact"><b>Contact Us</b></a></li>
+		        <li><a href="services"><b>{{ trans('static.services') }}</b></a></li>
+		        <li><a href="plans"><b>{{ trans('static.plans') }}</b></a></li>
+		        <li><a href="healthTips"><b>{{ trans('static.tips') }}</b></a></li>
+		        <li><a href="contact"><b>{{ trans('static.contact') }}</b></a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		    	@if (Confide::user())
-		        	<li><a href="myClinic" class="btn btn-primary btn-lg">My Clinic / </a></li>
-		        	<li><a href="users/logout" class="btn btn-danger">Log Out </a></li>
+		        	<li><a href="myClinic" class="btn btn-primary btn-lg">{{ trans('static.myclinic') }}</a></li>
+		        	<li><a href="users/logout" class="btn btn-danger">{{ trans('static.logout') }}</a></li>
 		   		@else
-		   			<li><a href="login" class="btn btn-primary btn-lg">Login</a></li>
+		   			<li><a href="login" class="btn btn-primary btn-lg">{{ trans('static.login') }}</a></li>
 		   		@endif
 	            <li><a href="#" class="btn btn-success"><b>عربي</b></a></li>
 			  </ul>
