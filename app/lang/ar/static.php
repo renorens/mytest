@@ -11,5 +11,8 @@ return array(
     'contact' => 'اتصل بنا',
     'myclinic' => 'عيادتي',
     'logout' => 'خروج',
-    'login' => 'دخول'
+    'login' => 'دخول',
+    'addpatient' => 'اضافة مريض',
+    'newappointment' => 'موعد جديد',
+    'legendNewPatient' => 'اضافة مريض جديد'
 );

@@ -11,5 +11,8 @@ return array(
     'contact' => 'Contact us',
     'myclinic' => 'My Clinic',
     'logout' => 'Logout',
-    'login' => 'Login'
+    'login' => 'Login',
+    'addpatient' => 'Add Patient',
+    'newappointment' => 'New Appointment',
+    'legendNewPatient' => 'New Patient'
 );
