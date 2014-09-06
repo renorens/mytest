@@ -83,7 +83,11 @@ class UsersController extends Controller
             $user         = User::whereEmail($input['email'])->first();
             $clinic       = Clinic::whereId($user->clinic_id)->first();
             $appointments = $clinic->appointments;
-            return  View::make('Clinics.myClinic', array('user'=>$user, 'appointments'=>$appointments, 'clinic'=>$clinic));
+            Session::put('clinicName', $clinic->name);
+            Session::put('user', $user);
+            Session::put('appointments', $appointments);
+            return View::make('Clinics.myClinic');
+            // return  View::make('Clinics.myClinic', array('user'=>$user, 'appointments'=>$appointments, 'clinic'=>$clinic));
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');

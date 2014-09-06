@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('setLocal/{lang}', function($lang){
+	App::setlocale($lang);
+	return Redirect::to('/');
+});
+
 Route::get('/', function()
 {
 	return View::make('hello');

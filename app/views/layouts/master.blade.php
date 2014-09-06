@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Doctor</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-switch.css') }}">
 		<link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
 	</head>
@@ -32,7 +33,12 @@
 		   		@else
 		   			<li><a href="login">{{ trans('static.login') }}</a></li>
 		   		@endif
-	            <li><a href="#" class="btn btn-success"><b>عربي</b></a></li>
+
+		   		@if (app::getLocale() == 'en')
+	            	<li><a href="setLocal/ar" class="btn btn-success btn-sm"><b>عربي</b></a></li>
+	            @else
+	            	<li><a href="setLocal/en" class="btn btn-success btn-sm"><b>English</b></a></li>
+	            @endif
 			  </ul>
 		    </div>
 	    </div>
@@ -40,15 +46,10 @@
 <script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}" />
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootswatch.js') }}"></script>
-<script>
-	$('.nav li').click(function () {
-		// alert('df');
-    	// $('.nav li').not(this).removeClass('active');
-	    // $(this).addClass('active');
-	});
-</script>
-        <div class="container">
-            @yield('content')
-        </div>
+<script type="text/javascript" src="{{ asset('js/bootstrap-switch.js) }}"></script>
+
+    <div class="container">
+        @yield('content')
+    </div>
     </body>
 </html>

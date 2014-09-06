@@ -15,7 +15,7 @@
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
 		    </button>
-		    <a class="navbar-brand" href="#">@yield('clinicName')</a>
+		    <a class="navbar-brand" href="#">{{Session::get('clinicName')}}</a>
 		  </div>
 		  <div class="navbar-collapse collapse navbar-inverse-collapse">
 		    <ul class="nav navbar-nav">
@@ -65,8 +65,13 @@
 <script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootswatch.js') }}"></script>
-       <div class="container">
-            @yield('content')
-        </div>
+<script type="text/javascript">
+	$('#gender').bootstrapSwitch('setOnClass', 'success');
+	$('#gender').bootstrapSwitch('setOffClass', 'danger');
+</script>
+
+   <div class="container">
+        @yield('content')
+    </div>
     </body>
 </html>
