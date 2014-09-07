@@ -21,7 +21,7 @@ class PatientsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('Patients.create');
 	}
 
 	/**
@@ -32,7 +32,24 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$clinic_id = Input::only('clinic_id');
+		$patient = new Patient;
+		$patient->clinic_id = $clinic_id;
+
+		$personal_info = new PersonalInfo;
+		if(Input::has('firstName')) {
+			$personal_info->first_name = Input::get('firstName');
+		}
+
+		if(Input::has('lastName')) {
+			$personal_info->last_name = Input::get('lastName');
+		}
+		if(Input::has('dob')) {
+			$personal_info->dob = Input::get('dob');
+		}
+		if(Input::has('email')) {
+			$personal_info->email = Input::get('email');
+		}
 	}
 
 	/**

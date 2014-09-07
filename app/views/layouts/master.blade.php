@@ -1,10 +1,9 @@
-<!doctype html>
+	<!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Doctor</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-switch.css') }}">
 		<link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
 	</head>
@@ -42,11 +41,8 @@
 			  </ul>
 		    </div>
 	    </div>
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}" />
+<script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/bootswatch.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/bootstrap-switch.js) }}"></script>
 
     <div class="container">
         @yield('content')

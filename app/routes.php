@@ -43,9 +43,8 @@ Route::get('login', function(){
 	return View::make('Users.login');
 });
 
-Route::get('patients/create', function(){
-	return View::make('Patients.create');
-});
+Route::get('patients/create', 'PatientsController@create');
+Route::post('patients/store', 'PatientsController@store');
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

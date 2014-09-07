@@ -83,7 +83,7 @@ class UsersController extends Controller
             $user         = User::whereEmail($input['email'])->first();
             $clinic       = Clinic::whereId($user->clinic_id)->first();
             $appointments = $clinic->appointments;
-            Session::put('clinicName', $clinic->name);
+            Session::put('clinic', $clinic);
             Session::put('user', $user);
             Session::put('appointments', $appointments);
             return View::make('Clinics.myClinic');
