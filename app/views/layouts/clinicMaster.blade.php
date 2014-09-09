@@ -14,8 +14,10 @@
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
-		    </button>
-		    <a class="navbar-brand" href="#">{{Session::get('clinic')->name}}</a>
+
+		    	<a class="navbar-brand" href="#">{{Session::get('clinic')->name}}</a>
+
+
 		  </div>
 		  <div class="navbar-collapse collapse navbar-inverse-collapse">
 		    <ul class="nav navbar-nav">
