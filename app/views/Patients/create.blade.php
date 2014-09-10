@@ -12,7 +12,7 @@
       <div class="tab-pane fade active in" id="personalInfoForm">
         <div class="col-lg-8">
           <div class="well bs-component">
-            <form class="form-horizontal" method="POST" action="{{ asset('patients/store') }}">
+            <form class="form-horizontal" id="personal_info_form" method="POST" action="{{ asset('patients/store') }}">
               <fieldset>
                 <div class="form-group">
                     <div class="col-sm-3">
@@ -56,7 +56,7 @@
       <div class="tab-pane fade" id="contact">
         <div class="col-lg-8">
           <div class="well bs-component">
-          <form class="form-horizontal" method="POST" action="{{ asset('patients/store') }}">
+          <form class="form-horizontal" id="contact_form" method="POST" action="{{ asset('patients/store') }}">
             <div class="form-group">
               <div class="col-sm-3">
                 <label for="address" class="col-lg-2 control-label">Address</label>
@@ -103,7 +103,7 @@
       <div class="tab-pane fade" id="emergencyForm">
         <div class="col-lg-8">
           <div class="well bs-component">
-          <form class="form-horizontal" method="POST" action="{{ asset('patients/store') }}">
+          <form class="form-horizontal" id="emergency_form" method="POST" action="{{ asset('patients/store') }}">
             <fieldset>
               <div class="form-group">
                 <div class="col-sm-3">
@@ -137,11 +137,11 @@
       <div class="tab-pane fade" id="healthForm">
         <div class="col-lg-8">
           <div class="well bs-component">
-          <form class="form-horizontal" method="POST" action="{{ asset('patients/store') }}">
+          <form class="form-horizontal" id="health_form" method="POST" action="{{ asset('patients/store') }}">
             <fieldset>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="diabetic" class="col-lg-2 text-danger">Diabetic</label>
+                  <label for="diabetic" class="col-lg-2 control-label">Diabetic</label>
                 </div>
                 <div class="col-md-6">
                   <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
@@ -151,7 +151,7 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="heart" class="col-lg-2 text-danger">Heart Disease</label>
+                  <label for="heart" class="col-lg-2 control-label">Heart Disease</label>
                 </div>
                 <div class="col-md-6">
                   <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
@@ -166,6 +166,32 @@
       </div>
     </div>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <a type="submit" class="btn btn-success btn-lg btn-block">Submit</a>
+    <a type="button" id="submitForms" class="btn btn-success btn-lg btn-block">Submit</a>
   </div>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submitForms").click(function () {
+
+                $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize(),
+                  function () {
+                      alert('personal info form submitted');
+                  });
+
+                $.post($("#contact_form").attr("action"), $("#contact_form").serialize(),
+                  function () {
+                      alert('contact form submitted');
+                  });
+
+                $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize(),
+                  function () {
+                      alert('emergency form submitted');
+                  });
+
+                $.post($("#health_form").attr("action"), $("#health_form").serialize(),
+                  function () {
+                      alert('health form submitted');
+                  });
+            });
+        });
+    </script>
 @stop

@@ -32,6 +32,7 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
+		dd(Input::all());
 		$clinic_id = Input::only('clinic_id');
 		$patient = new Patient;
 		$patient->clinic_id = $clinic_id;
