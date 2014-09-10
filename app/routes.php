@@ -70,3 +70,7 @@ Route::get('appointment/create/{clinic_id}', 'AppointmentsController@create');
 Route::get('test', function(){
 return View::make('static.test');
 });
+
+Route::get('plans', function(){
+	return View::make('layouts.switchMaster');
+});

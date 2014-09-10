@@ -50,6 +50,9 @@ class PatientsController extends \BaseController {
 		if(Input::has('email')) {
 			$personal_info->email = Input::get('email');
 		}
+		if(Input::has('mobile')) {
+			$personal_info->mobile = Input::get('mobile');
+		}
 	}
 
 	/**

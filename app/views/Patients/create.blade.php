@@ -35,8 +35,9 @@
                       <label for="gender" class="col-lg-2 control-label">Gender</label>
                     </div>
                     <div class="col-md-6">
-                      <input type="radio" name="gender" value="male"> Male
-                      <input type="radio" name="gender" value="female"> Female
+                      <div id="change-color-switch" data-on-label="M" data-off-label="F" class="make-switch" data-on="primary" data-off="success">
+                        <input type="checkbox" checked>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group">
@@ -140,20 +141,22 @@
             <fieldset>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="diabetic" class="col-lg-2 control-label">Diabetic</label>
+                  <label for="diabetic" class="col-lg-2 text-danger">Diabetic</label>
                 </div>
                 <div class="col-md-6">
-                  <input type="radio" name="diabetic" value="true"> Yes
-                  <input type="radio" name="diabetic" value="fale"> No
+                  <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox">
+                  </div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="heart" class="col-lg-2 control-label">Heart Disease</label>
+                  <label for="heart" class="col-lg-2 text-danger">Heart Disease</label>
                 </div>
                 <div class="col-md-6">
-                  <input type="radio" name="heart" value="true"> Yes
-                  <input type="radio" name="heart" value="fale"> No
+                  <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox">
+                  </div>
                 </div>
               </div>
             </fieldset>

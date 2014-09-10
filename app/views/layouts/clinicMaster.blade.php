@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 		<link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-switch.css') }}">
 	</head>
     <body>
     	<div class="navbar navbar-default">
@@ -67,10 +68,7 @@
 <script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootswatch.js') }}"></script>
-<script type="text/javascript">
-	$('#gender').bootstrapSwitch('setOnClass', 'success');
-	$('#gender').bootstrapSwitch('setOffClass', 'danger');
-</script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-switch.js') }}"></script>
 
    <div class="container">
         @yield('content')
