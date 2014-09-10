@@ -71,6 +71,3 @@ Route::get('test', function(){
 return View::make('static.test');
 });
 
-Route::get('plans', function(){
-	return View::make('layouts.switchMaster');
-});
