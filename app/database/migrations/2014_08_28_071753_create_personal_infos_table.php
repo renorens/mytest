@@ -18,13 +18,16 @@ class CreatePersonalInfosTable extends Migration {
 			$table->unsignedInteger('patient_id');
 			$table->string('first_name');
 			$table->string('last_name');
+			$table->string('gender');
 			$table->date('dob');
 			$table->string('email');
 			$table->string('mobile');
 			$table->string('phone');
+			$table->string('address');
+			$table->string('city');
+			$table->string('country');
 			$table->string('emergency_contact_name');
-			$table->string('emergency_contact_phone1');
-			$table->string('emergency_contact_phone2');
+			$table->string('emergency_contact_phone');
 			$table->string('emergenct_contact_relationship');
 
 			$table->foreign('patient_id')

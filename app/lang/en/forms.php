@@ -9,5 +9,7 @@ return array(
 	'new.patient.fname' => 'First Name',
 	'new.patient.lname' => 'Last  Name',
 	'new.patient.gender' => 'Gender',
-	'new.patient.dob'	=> 'Birthday'
+	'new.patient.dob'	=> 'Birthday',
+	'new.patient.email'	=> 'Email',
+	'new.patient.country'	=> 'Country'
 );

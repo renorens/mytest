@@ -44,10 +44,10 @@ Route::get('login', function(){
 });
 
 Route::get('patients/create', 'PatientsController@create');
-// Route::post('patients/store', 'PatientsController@store');
-Route::post('patients/store', function(){
-	echo('Users.login');
-});
+Route::post('patients/store', 'PatientsController@store');
+// Route::post('patients/store', function(){
+// 	echo('myClinic');
+// });
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

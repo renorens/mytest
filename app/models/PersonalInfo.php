@@ -1,8 +1,9 @@
 <?php
 
 class PersonalInfo extends \Eloquent {
-	protected $fillable = ['first_name', 'last_name', 'dob', 'email', 'mobile', 'phone', 'emergency_contact_name',
-						  'emergency_contact_phone1', 'emergency_contact_phone2', 'emergenct_contact_relationship'];
+	protected $fillable = ['first_name', 'last_name', 'dob', 'email', 'mobile', 'phone', 'gender',
+						   'emergency_contact_name', 'address','city','country','emergency_contact_phone',
+						   'emergenct_contact_relationship'];
 
 	public function patient()
 	{

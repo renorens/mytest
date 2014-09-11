@@ -1,5 +1,5 @@
 <?php
-
+use \app\models\PersonalInfo;
 class PatientsController extends \BaseController {
 
 	/**
@@ -32,28 +32,37 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
-		dd(Input::all());
-		$clinic_id = Input::only('clinic_id');
 		$patient = new Patient;
-		$patient->clinic_id = $clinic_id;
+		$clinic = Session::get('clinic');
 
-		$personal_info = new PersonalInfo;
-		if(Input::has('firstName')) {
-			$personal_info->first_name = Input::get('firstName');
-		}
+		$clinic->patients()->save($patient);
+		$personalInfo = Input::only('firstName','lastName','dob','email','gender','mobile',
+									'phone','address','country','city','address','emergencyName',
+									'emergencyPhone','emergencyRelationship');
 
-		if(Input::has('lastName')) {
-			$personal_info->last_name = Input::get('lastName');
-		}
-		if(Input::has('dob')) {
-			$personal_info->dob = Input::get('dob');
-		}
-		if(Input::has('email')) {
-			$personal_info->email = Input::get('email');
-		}
-		if(Input::has('mobile')) {
-			$personal_info->mobile = Input::get('mobile');
-		}
+		$this->createPersonalInfo($personalInfo, $patient);
+	}
+
+	public function createPersonalInfo($inputs, $patient)
+	{
+		$personalInfo = new PersonalInfo;
+
+		$personalInfo->first_name = $inputs['firstName'];
+		$personalInfo->last_name = $inputs['lastName'];
+		$personalInfo->dob = $inputs['dob'];
+		$personalInfo->email = $inputs['email'];
+		$personalInfo->mobile = $inputs['gender'];
+		$personalInfo->gender = $inputs['mobile'];
+		$personalInfo->phone = $inputs['phone'];
+		$personalInfo->address = $inputs['address'];
+		$personalInfo->country = $inputs['country'];
+		$personalInfo->city = $inputs['city'];
+		$personalInfo->address = $inputs['address'];
+		$personalInfo->emergency_contact_name = $inputs['emergencyName'];
+		$personalInfo->emergency_contact_phone = $inputs['emergencyPhone'];
+		$personalInfo->emergenct_contact_relationship = $inputs['emergencyRelationship'];
+
+		$patient->personal_info()->save($personalInfo);
 	}
 
 	/**

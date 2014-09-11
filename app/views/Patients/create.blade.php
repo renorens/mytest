@@ -27,7 +27,7 @@
                       <label for="lastName" class="col-lg-2 control-label">{{ trans('forms.new.patient.lname') }}</label>
                     </div>
                     <div class="col-md-6">
-                      <input type="text" class="form-control" name="LastName" id="LastName" placeholder="Last Name">
+                      <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
                     </div>
                   </div>
                   <div class="form-group">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-6">
                       <div id="change-color-switch" data-on-label="M" data-off-label="F" class="make-switch" data-on="primary" data-off="success">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" name="gender" id="gender" checked>
                       </div>
                     </div>
                   </div>
@@ -62,12 +62,12 @@
                 <label for="address" class="col-lg-2 control-label">Address</label>
               </div>
               <div class="col-md-6">
-                <textarea class="form-control" rows="3" name="address" id="address"></textarea>
+                <input type="text" class="form-control" name="address" id="address" placeholder="Street Address">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-3">
-                <label for="city" class="col-lg-2 control-label">City</label>
+                <label for="country" class="col-lg-2 control-label">City</label>
               </div>
               <div class="col-md-6">
                 <select class="form-control" name="city" id="city">
@@ -76,6 +76,20 @@
                   <option value="jenin">Jenin</option>
                   <option value="jerico">Jerico</option>
                   <option value="hebron">Hebron</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3">
+                <label for="country" class="col-lg-2 control-label">Country</label>
+              </div>
+              <div class="col-md-6">
+                <select class="form-control" name="country" id="country">
+                  <option value="ramallah">Palestine</option>
+                  <option value="nablus">Jordan</option>
+                  <option value="jenin">Syria</option>
+                  <option value="jerico">Saudi Arabia</option>
+                  <option value="hebron">Lebanon</option>
                 </select>
               </div>
             </div>
@@ -95,7 +109,14 @@
                 <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="Mobile Phone">
               </div>
             </div>
-
+            <div class="form-group">
+              <div class="col-sm-3">
+                <label for="email" class="col-lg-2 control-label">{{ trans('forms.new.patient.email') }}</label>
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+              </div>
+            </div>
           </form>
           </div>
         </div>
@@ -126,8 +147,16 @@
                   <label for="emergencyRelationship" class="col-lg-2 control-label">Relationship</label>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" name="emergencyRelationship" id="emergencyRelationship" placeholder="Relationship">
-                </div>
+                <select class="form-control" name="emergencyRelationship" id="emergencyRelationship">
+                  <option value="mother">Mother</option>
+                  <option value="father">Father</option>
+                  <option value="brother">Brother</option>
+                  <option value="sister">Sister</option>
+                  <option value="husband">Husband</option>
+                  <option value="wife">Wife</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
               </div>
             </fieldset>
           </form>
@@ -166,20 +195,22 @@
       </div>
     </div>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <a type="button" id="submitForms" class="btn btn-success btn-lg btn-block">Submit</a>
+    <a type="button" id="submitForms" class="btn btn-success btn-lg btn-block">Add Patient</a>
   </div>
   <script type="text/javascript">
     $(document).ready(function () {
         $("#submitForms").click(function () {
 
-            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize());
+            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize(), 
+              function(data){
+                window.location.replace(data);
+              });
 
-            $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
+            // $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
 
-            $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
+            // $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
 
-            $.post($("#health_form").attr("action"), $("#health_form").serialize());
-
+            // $.post($("#health_form").attr("action"), $("#health_form").serialize());
         });
     });
     </script>
