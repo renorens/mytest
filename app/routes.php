@@ -46,7 +46,7 @@ Route::get('login', function(){
 Route::get('patients/create', 'PatientsController@create');
 // Route::post('patients/store', 'PatientsController@store');
 Route::post('patients/store', function(){
-	dd('wer');
+	echo('Users.login');
 });
 
 // Confide routes

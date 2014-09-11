@@ -2,10 +2,10 @@
 @section('content')
 <div class="col-lg-13">
   <ul class="nav nav-tabs">
-  <li class="active"><a href="#personalInfoForm" data-toggle="tab">Personal Info</a></li>
-  <li class=""><a href="#contact" data-toggle="tab">Contact</a></li>
-  <li class=""><a href="#emergencyForm" data-toggle="tab">Emergency</a></li>
-   <li class=""><a href="#healthForm" data-toggle="tab">Health</a></li>
+  <li class="active"><a href="#personalInfoForm" data-toggle="tab">{{ trans('forms.new.patient.personal') }}</a></li>
+  <li class=""><a href="#contact" data-toggle="tab">{{ trans('forms.new.patient.contact') }}</a></li>
+  <li class=""><a href="#emergencyForm" data-toggle="tab">{{ trans('forms.new.patient.emergency') }}</a></li>
+   <li class=""><a href="#healthForm" data-toggle="tab">{{ trans('forms.new.patient.health') }}</a></li>
   </ul>
 
     <div id="myTabContent" class="tab-content">
@@ -16,7 +16,7 @@
               <fieldset>
                 <div class="form-group">
                     <div class="col-sm-3">
-                      <label for="firstName" class="col-lg-2 control-label">First Name</label>
+                      <label for="firstName" class="col-lg-2 control-label">{{ trans('forms.new.patient.fname') }}</label>
                     </div>
                     <div class="col-md-6">
                       <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
@@ -24,7 +24,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-3">
-                      <label for="lastName" class="col-lg-2 control-label">Last Name</label>
+                      <label for="lastName" class="col-lg-2 control-label">{{ trans('forms.new.patient.lname') }}</label>
                     </div>
                     <div class="col-md-6">
                       <input type="text" class="form-control" name="LastName" id="LastName" placeholder="Last Name">
@@ -32,7 +32,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-3">
-                      <label for="gender" class="col-lg-2 control-label">Gender</label>
+                      <label for="gender" class="col-lg-2 control-label">{{ trans('forms.new.patient.gender') }}</label>
                     </div>
                     <div class="col-md-6">
                       <div id="change-color-switch" data-on-label="M" data-off-label="F" class="make-switch" data-on="primary" data-off="success">
@@ -42,7 +42,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-3">
-                      <label for="dob" class="col-lg-2 control-label">Birthday</label>
+                      <label for="dob" class="col-lg-2 control-label">{{ trans('forms.new.patient.dob') }}</label>
                     </div>
                     <div class="col-md-6">
                       <input type="date" class="form-control" name="dob" id="dob" name="dob">
@@ -145,7 +145,7 @@
                 </div>
                 <div class="col-md-6">
                   <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox">
+                      <input type="checkbox" name="diabetic">
                   </div>
                 </div>
               </div>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="col-md-6">
                   <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox">
+                      <input type="checkbox" name="heart_disease" id="heart_disease">
                   </div>
                 </div>
               </div>
@@ -169,29 +169,18 @@
     <a type="button" id="submitForms" class="btn btn-success btn-lg btn-block">Submit</a>
   </div>
   <script type="text/javascript">
-        $(document).ready(function () {
-            $("#submitForms").click(function () {
+    $(document).ready(function () {
+        $("#submitForms").click(function () {
 
-                $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize(),
-                  function () {
-                      alert('personal info form submitted');
-                  });
+            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize());
 
-                $.post($("#contact_form").attr("action"), $("#contact_form").serialize(),
-                  function () {
-                      alert('contact form submitted');
-                  });
+            $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
 
-                $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize(),
-                  function () {
-                      alert('emergency form submitted');
-                  });
+            $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
 
-                $.post($("#health_form").attr("action"), $("#health_form").serialize(),
-                  function () {
-                      alert('health form submitted');
-                  });
-            });
+            $.post($("#health_form").attr("action"), $("#health_form").serialize());
+
         });
+    });
     </script>
 @stop
