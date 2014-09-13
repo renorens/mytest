@@ -195,22 +195,23 @@
       </div>
     </div>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br />
     <a type="button" id="submitForms" class="btn btn-success btn-lg btn-block">Add Patient</a>
   </div>
   <script type="text/javascript">
     $(document).ready(function () {
         $("#submitForms").click(function () {
 
-            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize(), 
+            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize());
+
+            $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
+
+            $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
+
+            $.post($("#health_form").attr("action"), $("#health_form").serialize(), 
               function(data){
                 window.location.replace(data);
               });
-
-            // $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
-
-            // $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
-
-            // $.post($("#health_form").attr("action"), $("#health_form").serialize());
         });
     });
     </script>

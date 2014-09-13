@@ -32,37 +32,27 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
+		$inputs = Input::all();
+		dd($inputs);
 		$patient = new Patient;
 		$clinic = Session::get('clinic');
 
+		$patient->first_name = $inputs['firstName'];
+		$patient->last_name = $inputs['lastName'];
+		$patient->dob = $inputs['dob'];
+		$patient->email = $inputs['email'];
+		$patient->mobile = $inputs['gender'];
+		$patient->gender = $inputs['mobile'];
+		$patient->phone = $inputs['phone'];
+		$patient->address = $inputs['address'];
+		$patient->country = $inputs['country'];
+		$patient->city = $inputs['city'];
+		$patient->address = $inputs['address'];
+		$patient->emergency_contact_name = $inputs['emergencyName'];
+		$patient->emergency_contact_phone = $inputs['emergencyPhone'];
+		$patient->emergenct_contact_relationship = $inputs['emergencyRelationship'];
+
 		$clinic->patients()->save($patient);
-		$personalInfo = Input::only('firstName','lastName','dob','email','gender','mobile',
-									'phone','address','country','city','address','emergencyName',
-									'emergencyPhone','emergencyRelationship');
-
-		$this->createPersonalInfo($personalInfo, $patient);
-	}
-
-	public function createPersonalInfo($inputs, $patient)
-	{
-		$personalInfo = new PersonalInfo;
-
-		$personalInfo->first_name = $inputs['firstName'];
-		$personalInfo->last_name = $inputs['lastName'];
-		$personalInfo->dob = $inputs['dob'];
-		$personalInfo->email = $inputs['email'];
-		$personalInfo->mobile = $inputs['gender'];
-		$personalInfo->gender = $inputs['mobile'];
-		$personalInfo->phone = $inputs['phone'];
-		$personalInfo->address = $inputs['address'];
-		$personalInfo->country = $inputs['country'];
-		$personalInfo->city = $inputs['city'];
-		$personalInfo->address = $inputs['address'];
-		$personalInfo->emergency_contact_name = $inputs['emergencyName'];
-		$personalInfo->emergency_contact_phone = $inputs['emergencyPhone'];
-		$personalInfo->emergenct_contact_relationship = $inputs['emergencyRelationship'];
-
-		$patient->personal_info()->save($personalInfo);
 	}
 
 	/**
