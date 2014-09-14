@@ -40,19 +40,21 @@ class PatientsController extends \BaseController {
 		$patient->first_name = $inputs['firstName'];
 		$patient->last_name = $inputs['lastName'];
 		$patient->dob = $inputs['dob'];
-		$patient->email = $inputs['email'];
+		// $patient->email = $inputs['email'];
 		$patient->mobile = $inputs['gender'];
-		$patient->gender = $inputs['mobile'];
-		$patient->phone = $inputs['phone'];
-		$patient->address = $inputs['address'];
-		$patient->country = $inputs['country'];
-		$patient->city = $inputs['city'];
-		$patient->address = $inputs['address'];
-		$patient->emergency_contact_name = $inputs['emergencyName'];
-		$patient->emergency_contact_phone = $inputs['emergencyPhone'];
-		$patient->emergenct_contact_relationship = $inputs['emergencyRelationship'];
+		// $patient->gender = $inputs['mobile'];
+		// $patient->phone = $inputs['phone'];
+		// $patient->address = $inputs['address'];
+		// $patient->country = $inputs['country'];
+		// $patient->city = $inputs['city'];
+		// $patient->address = $inputs['address'];
+		// $patient->emergency_contact_name = $inputs['emergencyName'];
+		// $patient->emergency_contact_phone = $inputs['emergencyPhone'];
+		// $patient->emergenct_contact_relationship = $inputs['emergencyRelationship'];
 
 		$clinic->patients()->save($patient);
+		return 'myClinic';
+		// return Redirect::to('myClinic');
 	}
 
 	/**

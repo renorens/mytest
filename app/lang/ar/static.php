@@ -14,5 +14,5 @@ return array(
     'login' => 'دخول',
     'addpatient' => 'اضافة مريض',
     'newappointment' => 'موعد جديد',
-    'legendNewPatient' => 'اضافة مريض جديد',
+    'legendNewPatient' => 'اضافة مريض جديد'
 );

@@ -19,7 +19,7 @@
                       <label for="firstName" class="col-lg-2 control-label">{{ trans('forms.new.patient.fname') }}</label>
                     </div>
                     <div class="col-md-6">
-                      <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                      <input type="text" class="form-control" name="firstName" id="firstName" placeholder="{{ trans('forms.new.patient.fname') }}">
                     </div>
                   </div>
                   <div class="form-group">
@@ -27,7 +27,7 @@
                       <label for="lastName" class="col-lg-2 control-label">{{ trans('forms.new.patient.lname') }}</label>
                     </div>
                     <div class="col-md-6">
-                      <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+                      <input type="text" class="form-control" name="lastName" id="lastName" placeholder="{{ trans('forms.new.patient.lname') }}">
                     </div>
                   </div>
                   <div class="form-group">
@@ -59,7 +59,7 @@
           <form class="form-horizontal" id="contact_form" method="POST" action="{{ asset('patients/store') }}">
             <div class="form-group">
               <div class="col-sm-3">
-                <label for="address" class="col-lg-2 control-label">Address</label>
+                <label for="address" class="col-lg-2 control-label">{{ trans('forms.new.patient.address') }}</label>
               </div>
               <div class="col-md-6">
                 <input type="text" class="form-control" name="address" id="address" placeholder="Street Address">
@@ -67,7 +67,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-3">
-                <label for="country" class="col-lg-2 control-label">City</label>
+                <label for="country" class="col-lg-2 control-label">{{ trans('forms.new.patient.city') }}</label>
               </div>
               <div class="col-md-6">
                 <select class="form-control" name="city" id="city">
@@ -81,7 +81,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-3">
-                <label for="country" class="col-lg-2 control-label">Country</label>
+                <label for="country" class="col-lg-2 control-label">{{ trans('forms.new.patient.country') }}</label>
               </div>
               <div class="col-md-6">
                 <select class="form-control" name="country" id="country">
@@ -95,7 +95,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-3">
-                <label for="phone" class="col-lg-2 control-label">Phone</label>
+                <label for="phone" class="col-lg-2 control-label">{{ trans('forms.new.patient.phone') }}</label>
               </div>
               <div class="col-md-6">
                 <input type="tel" class="form-control" name="phone" id="phone" placeholder="Home Phone">
@@ -103,7 +103,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-3">
-                <label for="mobile" class="col-lg-2 control-label">Mobile</label>
+                <label for="mobile" class="col-lg-2 control-label">{{ trans('forms.new.patient.mobile') }}</label>
               </div>
               <div class="col-md-6">
                 <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="Mobile Phone">
@@ -128,7 +128,7 @@
             <fieldset>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="emergencyName" class="col-lg-2 control-label">Emergency Contact</label>
+                  <label for="emergencyName" class="col-lg-2 control-label">{{ trans('forms.new.patient.emergency.name') }}</label>
                 </div>
                 <div class="col-md-6">
                   <input type="text" class="form-control" name="emergencyName" id="emergencyName" placeholder="Contact Name">
@@ -136,7 +136,7 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="emergencyPhone" class="col-lg-2 control-label">Mobile</label>
+                  <label for="emergencyPhone" class="col-lg-2 control-label">{{ trans('forms.new.patient.mobile') }}</label>
                 </div>
                 <div class="col-md-6">
                   <input type="tel" class="form-control" name="emergencyPhone" id="emergencyPhone" placeholder="Contact Mobile">
@@ -144,16 +144,16 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="emergencyRelationship" class="col-lg-2 control-label">Relationship</label>
+                  <label for="emergencyRelationship" class="col-lg-2 control-label">{{ trans('forms.new.patient.emergency.rel') }}</label>
                 </div>
                 <div class="col-md-6">
                 <select class="form-control" name="emergencyRelationship" id="emergencyRelationship">
-                  <option value="mother">Mother</option>
-                  <option value="father">Father</option>
-                  <option value="brother">Brother</option>
-                  <option value="sister">Sister</option>
-                  <option value="husband">Husband</option>
-                  <option value="wife">Wife</option>
+                  <option value="mother">{{ trans('forms.new.patient.mother') }}</option>
+                  <option value="father">{{ trans('forms.new.patient.father') }}</option>
+                  <option value="brother">{{ trans('forms.new.patient.brother') }}</option>
+                  <option value="sister">{{ trans('forms.new.patient.sister') }}</option>
+                  <option value="husband">{{ trans('forms.new.patient.husband') }}</option>
+                  <option value="wife">{{ trans('forms.new.patient.wife') }}</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -202,16 +202,17 @@
     $(document).ready(function () {
         $("#submitForms").click(function () {
 
-            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize());
-
-            $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
-
-            $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
-
-            $.post($("#health_form").attr("action"), $("#health_form").serialize(), 
+            $.post($("#personal_info_form").attr("action"), $("#personal_info_form").serialize(), 
               function(data){
+                alert(data);
                 window.location.replace(data);
               });
+
+            // $.post($("#contact_form").attr("action"), $("#contact_form").serialize());
+
+            // $.post($("#emergency_form").attr("action"), $("#emergency_form").serialize());
+
+            // $.post($("#health_form").attr("action"), $("#health_form").serialize());
         });
     });
     </script>
