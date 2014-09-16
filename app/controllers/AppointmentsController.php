@@ -9,9 +9,10 @@ class AppointmentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$appointments = Appointment::all();
+		$clinic_id = Session::get('clinic')->id;
+		$appointments = Appointment::where('clinic_id', $clinic_id)->get();
 
-		return View::make('appointments.index', compact('appointments'));
+		return Response::json($appointments);
 	}
 
 	/**

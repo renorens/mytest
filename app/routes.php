@@ -44,6 +44,7 @@ Route::get('login', function(){
 });
 
 Route::get('patients/create', 'PatientsController@create');
+Route::get('patients/index', 'PatientsController@index');
 Route::post('patients/store', 'PatientsController@store');
 // Route::post('patients/store', function(){
 // 	echo('myClinic');
@@ -69,6 +70,7 @@ Route::get('myClinic', 'ClinicsController@showMyClinic');
 
 // appointments
 Route::get('appointment/create/{clinic_id}', 'AppointmentsController@create');
+Route::get('appointment/index', 'AppointmentsController@index');
 
 Route::get('test', function(){
 return View::make('static.test');

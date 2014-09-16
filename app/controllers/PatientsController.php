@@ -10,7 +10,9 @@ class PatientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$clinic_id = Session::get('clinic')->id;
+		$patients = Patient::where('clinic_id', '=', $clinic_id)->get();
+		return Response::json($patients);
 	}
 
 	/**

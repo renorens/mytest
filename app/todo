@@ -1,0 +1,14 @@
+- patient
+	- UI (store/update/index/autocomplete)
+		- submit forms as they are
+		- complete health info
+		- add m/f check to display different stuff for each gender
+		- translation rtl (foundation instead of bootstrap)
+		- create update UI
+		- create auto-complete
+
+	- Backend
+		- patient store
+		- store health info (migration, controller, route)
+		- show (id)
+		- auto-complete piece

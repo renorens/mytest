@@ -23,24 +23,23 @@
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('static.appointments') }}<b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		          <li><a href="#">{{ trans('static.newappointment') }}</a></li>
-		          <li><a href="#">Another action</a></li>
-		          <li><a href="#">Something else here</a></li>
-		          <li class="divider"></li>
-		          <li class="dropdown-header">Dropdown header</li>
-		          <li><a href="#">Separated link</a></li>
-		          <li><a href="#">One more separated link</a></li>
+		          <li><a href="{{ asset('appointment/index')}}">Clinic Appointments</a></li>
+		          <!-- <li class="divider"></li> -->
+		          <!-- <li class="dropdown-header">Dropdown header</li> -->
+		          <!-- <li><a href="#">Separated link</a></li> -->
+		          <!-- <li><a href="#">One more separated link</a></li> -->
 		        </ul>
 		      </li>
 		      <li class="dropdown">
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('static.patients') }}<b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		          <li><a href="{{ asset('patients/create')}}">{{ trans('static.addpatient') }}</a></li>
-		          <li><a href="#">Another action</a></li>
-		          <li><a href="#">Something else here</a></li>
-		          <li class="divider"></li>
-		          <li class="dropdown-header">Dropdown header</li>
-		          <li><a href="#">Separated link</a></li>
-		          <li><a href="#">One more separated link</a></li>
+		          <li><a href="{{ asset('patients/index')}}">All Patinets</a></li>
+		          <!-- <li><a href="#">Something else here</a></li> -->
+		          <!-- <li class="divider"></li> -->
+		          <!-- <li class="dropdown-header">Dropdown header</li> -->
+		          <!-- <li><a href="#">Separated link</a></li> -->
+		          <!-- <li><a href="#">One more separated link</a></li> -->
 		        </ul>
 		      </li>
 		    </ul>
