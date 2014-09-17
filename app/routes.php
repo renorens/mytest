@@ -46,9 +46,7 @@ Route::get('login', function(){
 Route::get('patients/create', 'PatientsController@create');
 Route::get('patients/index', 'PatientsController@index');
 Route::post('patients/store', 'PatientsController@store');
-// Route::post('patients/store', function(){
-// 	echo('myClinic');
-// });
+// Route::resource('Patient', 'PatientsController');
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

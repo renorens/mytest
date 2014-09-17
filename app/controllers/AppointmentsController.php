@@ -11,8 +11,14 @@ class AppointmentsController extends \BaseController {
 	{
 		$clinic_id = Session::get('clinic')->id;
 		$appointments = Appointment::where('clinic_id', $clinic_id)->get();
+		$patientAppointments = [];
+		foreach ($appointments as $appointment) {
+			$patient = Patient::whereId($appointment->patient_id)->get();
+			$patientAppointments['patientName'] = $patient->first_name.' '$patient->last_name;
 
-		return Response::json($appointments);
+		}
+
+		return View::make('Appointments.index', array('appointments' => $patientAppointments));
 	}
 
 	/**

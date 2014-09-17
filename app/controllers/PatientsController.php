@@ -1,5 +1,5 @@
 <?php
-use \app\models\PersonalInfo;
+
 class PatientsController extends \BaseController {
 
 	/**
@@ -12,7 +12,7 @@ class PatientsController extends \BaseController {
 	{
 		$clinic_id = Session::get('clinic')->id;
 		$patients = Patient::where('clinic_id', '=', $clinic_id)->get();
-		return Response::json($patients);
+		return View::make('Patients.index', array('patinets' => $patients));
 	}
 
 	/**
@@ -68,7 +68,7 @@ class PatientsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return Patient::whereId($id)->get();
 	}
 
 	/**
