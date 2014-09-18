@@ -16,8 +16,7 @@ class CreatePatientsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->unsignedInteger('clinic_id');
-			$table->string('first_name');
-			$table->string('last_name');
+			$table->string('name');
 			$table->string('gender');
 			$table->date('dob');
 			$table->string('email');

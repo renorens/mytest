@@ -23,6 +23,7 @@ class AppointmentsController extends \BaseController {
 		return View::make('Appointments.index', array('appointments' => $patientAppointments));
 	}
 
+
 	/**
 	 * Show the form for creating a new appointment
 	 *
@@ -64,6 +65,14 @@ class AppointmentsController extends \BaseController {
 
 		return View::make('appointments.show', compact('appointment'));
 	}
+
+	public function patientAppointments($id)
+	{
+		$appointments = Appointment::where('patient_id', $id)->get();
+		// return Response::json($appointments);
+		return  View::make('Appointments.patientAppointments', array('appointments' => $appointments));
+	}
+
 
 	/**
 	 * Show the form for editing the specified appointment.

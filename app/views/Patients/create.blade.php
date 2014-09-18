@@ -16,20 +16,20 @@
               <fieldset>
                 <div class="form-group">
                     <div class="col-sm-3">
-                      <label for="firstName" class="col-lg-2 control-label">{{ trans('forms.new.patient.fname') }}</label>
+                      <label for="name" class="col-lg-2 control-label">{{ trans('forms.new.patient.fname') }}</label>
                     </div>
                     <div class="col-md-6">
-                      <input type="text" class="form-control" name="firstName" id="firstName" placeholder="{{ trans('forms.new.patient.fname') }}">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('forms.new.patient.fname') }}">
                     </div>
                   </div>
-                  <div class="form-group">
+<!--                   <div class="form-group">
                     <div class="col-sm-3">
                       <label for="lastName" class="col-lg-2 control-label">{{ trans('forms.new.patient.lname') }}</label>
                     </div>
                     <div class="col-md-6">
                       <input type="text" class="form-control" name="lastName" id="lastName" placeholder="{{ trans('forms.new.patient.lname') }}">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <div class="col-sm-3">
                       <label for="gender" class="col-lg-2 control-label">{{ trans('forms.new.patient.gender') }}</label>

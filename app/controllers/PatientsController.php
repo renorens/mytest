@@ -10,9 +10,14 @@ class PatientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$clinic_id = Session::get('clinic')->id;
-		$patients = Patient::where('clinic_id', '=', $clinic_id)->get();
-		return View::make('Patients.index', array('patinets' => $patients));
+		if(Session::has('clinic')) {
+			$clinic_id = Session::get('clinic')->id;
+			$patients = Patient::where('clinic_id', '=', $clinic_id)->get();
+			return View::make('Patients.index', array('patients' => $patients));
+		}else {
+			return Redirect::to('login');
+		}
+		
 	}
 
 	/**

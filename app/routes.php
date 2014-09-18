@@ -69,6 +69,7 @@ Route::get('myClinic', 'ClinicsController@showMyClinic');
 // appointments
 Route::get('appointment/create/{clinic_id}', 'AppointmentsController@create');
 Route::get('appointment/index', 'AppointmentsController@index');
+Route::get('appointment/patient/{id}', 'AppointmentsController@patientAppointments');
 
 Route::get('test', function(){
 return View::make('static.test');
