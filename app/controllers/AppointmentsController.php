@@ -13,11 +13,13 @@ class AppointmentsController extends \BaseController {
 		$appointments = Appointment::where('clinic_id', $clinic_id)->get();
 		$patientAppointments = [];
 		foreach ($appointments as $appointment) {
-			$patient = Patient::whereId($appointment->patient_id)->get();
-			$patientAppointments['patientName'] = $patient->first_name.' '$patient->last_name;
+			$patient = Patient::whereId($appointment->patient_id)->first();
 
+			$patientAppointments[$appointment->id]['id'] = $appointment->id;
+			$patientAppointments[$appointment->id]['patientName'] = $patient->first_name.' '.$patient->last_name;
+			$patientAppointments[$appointment->id]['patientDob']  = $patient->dob;
+			$patientAppointments[$appointment->id]['appointmentDate'] = $appointment->appointment_date;
 		}
-
 		return View::make('Appointments.index', array('appointments' => $patientAppointments));
 	}
 
