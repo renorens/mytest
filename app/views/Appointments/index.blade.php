@@ -13,12 +13,61 @@
 		<tbody>
 			@foreach ($appointments as $appointment)
 				<tr class="info">
-					<td>{{ $appointment['id'] }}</td>
-					<td>{{ $appointment['patientName'] }}</td>
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
 					<td>{{ $appointment['patientDob'] }}</td>
 					<td>{{ $appointment['appointmentDate'] }}</td>
 					<td>notes</td>
 				</tr>		
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
+				<tr class="info">
+					<td><b><u>{{ $appointment['id'] }}</u></b></td>
+					<td><b>{{ $appointment['patientName'] }}</b></td>
+					<td>{{ $appointment['patientDob'] }}</td>
+					<td>{{ $appointment['appointmentDate'] }}</td>
+					<td>notes</td>
+				</tr>
 			@endforeach
 		</tbody>
 	</table>

@@ -32,10 +32,10 @@
             </div>
           </div>
         </fieldset>
+        <input type="text" name="formName" hidden value="baseForm" />
         <fieldset>
           <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
+            <li><input type="submit" class="btn btn-primary" value="Next"/> </li>
           </ul>
         </fieldset>
     </form>

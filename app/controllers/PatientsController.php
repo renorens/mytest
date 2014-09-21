@@ -39,29 +39,23 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$inputs = Input::all();
-		dd($inputs);
-		$patient = new Patient;
-		$clinic = Session::get('clinic');
+		if(Input::has('formName')) {
+			$inputs = Input::all();
+			$gender = 'm';
+			$patient = new Patient;
+			$clinic = Session::get('clinic');
 
-		$patient->first_name = $inputs['firstName'];
-		$patient->last_name = $inputs['lastName'];
-		$patient->dob = $inputs['dob'];
-		// $patient->email = $inputs['email'];
-		$patient->mobile = $inputs['gender'];
-		// $patient->gender = $inputs['mobile'];
-		// $patient->phone = $inputs['phone'];
-		// $patient->address = $inputs['address'];
-		// $patient->country = $inputs['country'];
-		// $patient->city = $inputs['city'];
-		// $patient->address = $inputs['address'];
-		// $patient->emergency_contact_name = $inputs['emergencyName'];
-		// $patient->emergency_contact_phone = $inputs['emergencyPhone'];
-		// $patient->emergenct_contact_relationship = $inputs['emergencyRelationship'];
+			$patient->name = $inputs['name'];
+			if($inputs['gender'] != 'on') {
+				$gender = 'f';
+			}
+			$patient->gender = $inputs['gender'];
+			$patient->dob = $inputs['dob'];
 
-		$clinic->patients()->save($patient);
-		return 'myClinic';
-		// return Redirect::to('myClinic');
+			$clinic->patients()->save($patient);
+		}
+		
+
 	}
 
 	/**
