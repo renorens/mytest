@@ -16,7 +16,7 @@ class AppointmentsController extends \BaseController {
 			$patient = Patient::whereId($appointment->patient_id)->first();
 
 			$patientAppointments[$appointment->id]['id'] = $appointment->id;
-			$patientAppointments[$appointment->id]['patientName'] = $patient->first_name.' '.$patient->last_name;
+			$patientAppointments[$appointment->id]['patientName'] = $patient->name;
 			$patientAppointments[$appointment->id]['patientDob']  = $patient->dob;
 			$patientAppointments[$appointment->id]['appointmentDate'] = $appointment->appointment_date;
 		}

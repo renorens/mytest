@@ -1,5 +1,48 @@
 @extends('layouts.clinicMaster')
 @section('content')
+    <header><h2>Add Patient</h2></header>
+<div class="col-lg-8">
+  <div class="well bs-component">
+    <form class="form-horizontal" id="personal_info_form" method="POST" action="{{ asset('patients/store') }}">
+      <fieldset>
+        <div class="form-group">
+            <div class="col-sm-3">
+              <label for="name" class="col-lg-2 control-label">{{ trans('forms.new.patient.fname') }}</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('forms.new.patient.fname') }}">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for="gender" class="col-lg-2 control-label">{{ trans('forms.new.patient.gender') }}</label>
+            </div>
+            <div class="col-md-6">
+              <div id="change-color-switch" data-on-label="M" data-off-label="F" class="make-switch" data-on="primary" data-off="success">
+                <input type="checkbox" name="gender" id="gender" checked>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for="dob" class="col-lg-2 control-label">{{ trans('forms.new.patient.dob') }}</label>
+            </div>
+            <div class="col-md-6">
+              <input type="date" class="form-control" name="dob" id="dob" name="dob">
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+        </fieldset>
+    </form>
+  </div>
+</div>
+
+<!-- 
 <div class="col-lg-13">
   <ul class="nav nav-tabs">
   <li class="active"><a href="#personalInfoForm" data-toggle="tab">{{ trans('forms.new.patient.personal') }}</a></li>
@@ -22,14 +65,6 @@
                       <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('forms.new.patient.fname') }}">
                     </div>
                   </div>
-<!--                   <div class="form-group">
-                    <div class="col-sm-3">
-                      <label for="lastName" class="col-lg-2 control-label">{{ trans('forms.new.patient.lname') }}</label>
-                    </div>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" name="lastName" id="lastName" placeholder="{{ trans('forms.new.patient.lname') }}">
-                    </div>
-                  </div> -->
                   <div class="form-group">
                     <div class="col-sm-3">
                       <label for="gender" class="col-lg-2 control-label">{{ trans('forms.new.patient.gender') }}</label>
@@ -48,6 +83,9 @@
                       <input type="date" class="form-control" name="dob" id="dob" name="dob">
                     </div>
                   </div>
+                  <br /><br /><br /><br /><br /><br /><br /><br />
+
+
               </fieldset>
             </form>
           </div>  
@@ -158,6 +196,7 @@
                 </select>
               </div>
               </div>
+              <br /><br /><br /><br /><br /><br /><br /><br />
             </fieldset>
           </form>
         </div>
@@ -197,7 +236,7 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br />
     <a type="button" id="submitForms" class="btn btn-success btn-lg btn-block">Add Patient</a>
-  </div>
+  </div> -->
   <script type="text/javascript">
     $(document).ready(function () {
         $("#submitForms").click(function () {

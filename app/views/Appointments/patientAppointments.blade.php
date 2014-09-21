@@ -13,8 +13,8 @@
 		<tbody>
 			@foreach ($appointments as $appointment)
 				<tr class="info">
-					<td>{{ $appointment['id'] }}</td>
-					<td>{{ $appointment['patientName'] }}</td>
+					<td>{{ $appointment->patient_id }}</td>
+					<td>{{ $appointment->clinic_id}}</td>
 					<td>{{ $appointment['patientDob'] }}</td>
 					<td>{{ $appointment['appointmentDate'] }}</td>
 					<td>notes</td>
