@@ -18,55 +18,6 @@
 					<td>{{ $appointment['patientDob'] }}</td>
 					<td>{{ $appointment['appointmentDate'] }}</td>
 					<td>notes</td>
-				</tr>		
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
-				</tr>
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
-				</tr>
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
-				</tr>
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
-				</tr>
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
-				</tr>
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
-				</tr>
-				<tr class="info">
-					<td><b><u>{{ $appointment['id'] }}</u></b></td>
-					<td><b>{{ $appointment['patientName'] }}</b></td>
-					<td>{{ $appointment['patientDob'] }}</td>
-					<td>{{ $appointment['appointmentDate'] }}</td>
-					<td>notes</td>
 				</tr>
 			@endforeach
 		</tbody>

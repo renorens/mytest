@@ -39,23 +39,23 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
-		if(Input::has('formName')) {
-			$inputs = Input::all();
-			$gender = 'm';
+		$form = Input::get('formName'); 
+		if($form == 'baseForm') {
 			$patient = new Patient;
-			$clinic = Session::get('clinic');
-
-			$patient->name = $inputs['name'];
-			if($inputs['gender'] != 'on') {
-				$gender = 'f';
+			if(Input::has('gender')) {
+				$patient->gender = 'Male';
+			}else {
+				$patient->gender = 'Female';
 			}
-			$patient->gender = $inputs['gender'];
+			$inputs = Input::all();
+			$patient->name = $inputs['name'];
 			$patient->dob = $inputs['dob'];
 
+			$clinic = Session::get('clinic');
 			$clinic->patients()->save($patient);
-		}
-		
 
+			return View::make('Patients.addressForm');
+		}
 	}
 
 	/**
