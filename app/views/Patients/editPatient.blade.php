@@ -29,13 +29,14 @@
                 <label for="country" class="col-lg-2 control-label">{{ trans('forms.new.patient.city') }}</label>
               </div>
               <div class="col-md-6">
-                <select class="form-control" name="city" id="city">
-                  <option value="ramallah">Ramallah</option>
-                  <option value="nablus">Nablus</option>
-                  <option value="jenin">Jenin</option>
-                  <option value="jerico">Jerico</option>
-                  <option value="hebron">Hebron</option>
-                </select>
+              	<input list="city" class="form-control" name="city" placeholder="City">
+                <datalist id="city">
+                  <option value="Ramallah">Ramallah</option>
+                  <option value="Nablus">Nablus</option>
+                  <option value="Jenin">Jenin</option>
+                  <option value="Jerico">Jerico</option>
+                  <option value="Hebron">Hebron</option>
+                </datalist>
               </div>
             </div>
             <div class="form-group">
@@ -43,13 +44,14 @@
                 <label for="country" class="col-lg-2 control-label">{{ trans('forms.new.patient.country') }}</label>
               </div>
               <div class="col-md-6">
-                <select class="form-control" name="country" id="country">
-                  <option value="ramallah">Palestine</option>
-                  <option value="nablus">Jordan</option>
-                  <option value="jenin">Syria</option>
-                  <option value="jerico">Saudi Arabia</option>
-                  <option value="hebron">Lebanon</option>
-                </select>
+                <input list="country" class="form-control" name="country" placeholder="Country">
+                <datalist id="country">
+                  <option value="Palestine">Palestine</option>
+                  <option value="Jordan">Jordan</option>
+                  <option value="Syria">Syria</option>
+                  <option value="Saudi-Arabia">Saudi-Arabia</option>
+                  <option value="Lebanon">Lebanon</option>
+                </datalist>
               </div>
             </div>
             <div class="form-group">
@@ -88,7 +90,7 @@
       <h4 class="panel-title">
         <a data-toggle="collapse" data-target="#collapseTwo" 
            href="#collapseTwo" class="collapsed">
-          Collapsible Group Item #2
+          <p  class="text-success">+ Add Emergency contact</p>
         </a>
       </h4>
     </div>
@@ -103,7 +105,7 @@
       <h4 class="panel-title">
         <a data-toggle="collapse" data-target="#collapseThree"
            href="#collapseThree" class="collapsed">
-          Collapsible Group Item #3
+          <p  class="text-success">+ Health Profile</p>
         </a>
       </h4>
     </div>
