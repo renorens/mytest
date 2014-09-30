@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>My Clinic</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-		<link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
+		<link rel="shortcut icon" href="{{ asset('images/favicon.ico')}}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-switch.css') }}">
 	</head>

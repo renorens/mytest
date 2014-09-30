@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Clinic Care</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-		<link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
+		<link rel="shortcut icon" href="{{ asset('images/favicon.ico')}}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
 	</head>
     <body>

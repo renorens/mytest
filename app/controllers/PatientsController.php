@@ -54,35 +54,11 @@ class PatientsController extends \BaseController {
 		// Session::put('patient', $patient);
 		
 		$patient = $clinic->patients()->save($patient);
-		// dd($patient->name);
-		return View::make('Patients.editPatient', array('patient'=>$patient));
+		// dd($patient->id);
+
+		return Redirect::action('PatientsController@edit', array('id'=> $patient->id));
+		// return View::make('Patients.editPatient', array('patient'=>$patient));
 		// return View::make('Patients.addressForm');
-
-		// check if session has patient info / coming from previous button
-		// if(Session::has('patient')) {
-		// 	$patient = Session::get('patient');
-		// 	return View::make('Patients.create', array('patient' => $patient));
-		// }else {
-			
-
-		// }
-		// $form = Input::get('formName'); 
-		// if($form == 'baseForm') {
-		// 	$patient = new Patient;
-		// 	if(Input::has('gender')) {
-		// 		$patient->gender = 'Male';
-		// 	}else {
-		// 		$patient->gender = 'Female';
-		// 	}
-		// 	$inputs = Input::all();
-		// 	$patient->name = $inputs['name'];
-		// 	$patient->dob = $inputs['dob'];
-
-		// 	$clinic = Session::get('clinic');
-		// 	$clinic->patients()->save($patient);
-
-		// 	return View::make('Patients.addressForm');
-		// }
 	}
 
 	/**
@@ -106,7 +82,8 @@ class PatientsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$patient = Patient::whereId($id)->first();
+		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}
 
 	/**

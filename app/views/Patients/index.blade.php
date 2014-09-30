@@ -8,6 +8,7 @@
 		      <th>DOB</th>
 		      <th>Appointments List</th>
 		      <th>Health Profile</th>
+		      <th>Edit</th>
 		      <th>Delete</th>
 			</tr>
 		</thead>
@@ -19,7 +20,8 @@
 					<td>{{ $patient->dob }}</td>
 					<td><a href="{{ asset('appointment/patient\/') }}{{ $patient->id}}">Appointments</a></td>
 					<td><a href="#">Health Profile</a></td>
-					<td><a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn btn-danger">Delete</a></td>
+					<td><a href="{{ asset('patients/edit\/') }}{{ $patient->id}}" class="btn btn-warning">Edit</a></td>
+					<td><a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn-xs btn-danger">X</a></td>
 				</tr>
 			@endforeach
 		</tbody>
