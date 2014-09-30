@@ -39,23 +39,50 @@ class PatientsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$form = Input::get('formName'); 
-		if($form == 'baseForm') {
-			$patient = new Patient;
-			if(Input::has('gender')) {
-				$patient->gender = 'Male';
-			}else {
-				$patient->gender = 'Female';
-			}
-			$inputs = Input::all();
-			$patient->name = $inputs['name'];
-			$patient->dob = $inputs['dob'];
-
-			$clinic = Session::get('clinic');
-			$clinic->patients()->save($patient);
-
-			return View::make('Patients.addressForm');
+		// store patient
+		$patient = new Patient;
+		if(Input::has('gender')) {
+			$patient->gender = 'Male';
+		}else {
+			$patient->gender = 'Female';
 		}
+		$inputs = Input::all();
+		$patient->name = $inputs['name'];
+		$patient->dob = $inputs['dob'];
+
+		$clinic = Session::get('clinic');
+		// Session::put('patient', $patient);
+		
+		$patient = $clinic->patients()->save($patient);
+		// dd($patient->name);
+		return View::make('Patients.editPatient', array('patient'=>$patient));
+		// return View::make('Patients.addressForm');
+
+		// check if session has patient info / coming from previous button
+		// if(Session::has('patient')) {
+		// 	$patient = Session::get('patient');
+		// 	return View::make('Patients.create', array('patient' => $patient));
+		// }else {
+			
+
+		// }
+		// $form = Input::get('formName'); 
+		// if($form == 'baseForm') {
+		// 	$patient = new Patient;
+		// 	if(Input::has('gender')) {
+		// 		$patient->gender = 'Male';
+		// 	}else {
+		// 		$patient->gender = 'Female';
+		// 	}
+		// 	$inputs = Input::all();
+		// 	$patient->name = $inputs['name'];
+		// 	$patient->dob = $inputs['dob'];
+
+		// 	$clinic = Session::get('clinic');
+		// 	$clinic->patients()->save($patient);
+
+		// 	return View::make('Patients.addressForm');
+		// }
 	}
 
 	/**
@@ -103,7 +130,9 @@ class PatientsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$patient = Patient::find($id);
+		$patient->delete();
+		return $this->index();
 	}
 
 }

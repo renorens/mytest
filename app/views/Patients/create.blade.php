@@ -1,6 +1,6 @@
 @extends('layouts.clinicMaster')
 @section('content')
-    <header><h2>Add Patient</h2></header>
+    <h3 class="text-success"><b>Add Patient</b></h3>
 <div class="col-lg-8">
   <div class="well bs-component">
     <form class="form-horizontal" id="personal_info_form" method="POST" action="{{ asset('patients/store') }}">
@@ -10,7 +10,11 @@
               <label for="name" class="col-lg-2 control-label">{{ trans('forms.new.patient.fname') }}</label>
             </div>
             <div class="col-md-6">
+              @if(Session::has('patient'))
+              <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('forms.new.patient.fname') }}" value="{{ Session::get('patient')->name }}">
+              @else
               <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('forms.new.patient.fname') }}">
+              @endif
             </div>
           </div>
           <div class="form-group">
@@ -35,7 +39,9 @@
         <input type="text" name="formName" hidden value="baseForm" />
         <fieldset>
           <ul class="pager">
-            <li><input type="submit" class="btn btn-primary" value="Next"/> </li>
+            <!-- <li><input type="submit" class="btn btn-primary" value="Add "/></li> -->
+            <!-- <li><a href="#">Add Address</a></li> -->
+            <li><input type="submit" class="btn btn-primary" value="Create Patient"/></li>
           </ul>
         </fieldset>
     </form>

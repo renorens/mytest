@@ -67,7 +67,7 @@
 	    <input type="text" name="formName" hidden value="addressForm" />
         <fieldset>
           <ul class="pager">
-          	<li><a href="#">Previous</a></li>
+          	<li><a href="{{ asset('patients/create') }}">Previous</a></li>
             <li><input type="submit" class="btn btn-primary" value="Next"/> </li>
           </ul>
         </fieldset>

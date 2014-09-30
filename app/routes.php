@@ -46,7 +46,7 @@ Route::get('login', function(){
 Route::get('patients/create', 'PatientsController@create');
 Route::get('patients/index', 'PatientsController@index');
 Route::post('patients/store', 'PatientsController@store');
-// Route::resource('Patient', 'PatientsController');
+Route::get('patients/delete/{id}', 'PatientsController@destroy');
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');
