@@ -12,7 +12,7 @@ class PatientsController extends \BaseController {
 	{
 		if(Session::has('clinic')) {
 			$clinic_id = Session::get('clinic')->id;
-			$patients = Patient::where('clinic_id', '=', $clinic_id)->get();
+			$patients = Patient::where('clinic_id', '=', $clinic_id)->paginate(13);
 			return View::make('Patients.index', array('patients' => $patients));
 		}else {
 			return Redirect::to('login');
@@ -95,7 +95,31 @@ class PatientsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$form = Input::get('form_name');
+		$patient = Patient::find($id);
+		if($form == 'addressForm') {
+			if(Input::has('address')) {
+				$patient->address = Input::get('address');
+			}
+			if(Input::has('city')) {
+				$patient->city = Input::get('city');
+			}
+			if(Input::has('country')) {
+				$patient->country = Input::get('country');
+			}
+			if(Input::has('phone')) {
+				$patient->phone = Input::get('phone');
+			}
+			if(Input::has('mobile')) {
+				$patient->mobile = Input::get('mobile');
+			}
+			if(Input::has('email')) {
+				$patient->email = Input::get('email');
+			}
+		}
+		$patient->save();
+
+		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}
 
 	/**
@@ -109,7 +133,8 @@ class PatientsController extends \BaseController {
 	{
 		$patient = Patient::find($id);
 		$patient->delete();
-		return $this->index();
+		return Redirect::to('patients/index');
+		// return $this->index();
 	}
 
 }

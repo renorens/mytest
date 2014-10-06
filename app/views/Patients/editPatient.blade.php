@@ -15,7 +15,7 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
-      	<form class="form-horizontal" id="contact_form" method="POST" action="{{ asset('patients/store') }}">
+      	<form class="form-horizontal" id="contact_form" method="POST" action="{{ asset('patients/update\/') }}{{ $patient->id}}">
             <div class="form-group">
               <div class="col-sm-3">
                 <label for="address" class="col-lg-2 control-label">{{ trans('forms.new.patient.address') }}</label>
@@ -78,6 +78,7 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
               </div>
             </div>
+            <input type="hidden" name="form_name" value="addressForm" >
             <div class="col-lg-10 col-lg-offset-4">
               <button type="submit" class="btn btn-primary">Add contact info</button>
             </div>

@@ -47,6 +47,11 @@
 		      <input type="text" class="form-control col-lg-8" placeholder="Search Patients">
 		    </form>
 		    <ul class="nav navbar-nav navbar-right">
+		    	@if (Confide::user())
+		        	<li><a href="{{ asset('users/logout') }}">{{ trans('static.logout') }}</a></li>
+		   		@else
+		   			<li><a href="{{ asset('login') }}">{{ trans('static.login') }}</a></li>
+		   		@endif
 		      <li><a href="/">{{ trans('static.home') }}</a></li>
 		      <li class="dropdown">
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Billing <b class="caret"></b></a>

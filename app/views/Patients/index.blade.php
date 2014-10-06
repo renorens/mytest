@@ -31,20 +31,24 @@
 						        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
 						      </div>
 						      <div class="modal-body">
-						        Are you sure you want to delete patient : {{ $patient->name }}
+						        Are you sure you want to delete patient : <b>{{ $patient->name }}?</b>
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        <a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn btn-primary">Delete</a>
-						        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+						        <a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn btn-danger">Delete</a>
 						      </div>
 						    </div>
 						  </div>
 						</div>
 					</td>
-					<!-- <td><a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn-xs btn-danger">X</a></td> -->
-				</tr>
+				</tr>				
 			@endforeach
 		</tbody>
 	</table>
+	<div class="row">
+
+		<div class="col-xs-3 content col-xs-offset-10">
+			<?php echo $patients->links(); ?>
+		</div>
+	</div>
 @stop
