@@ -20,8 +20,29 @@
 					<td>{{ $patient->dob }}</td>
 					<td><a href="{{ asset('appointment/patient\/') }}{{ $patient->id}}">Appointments</a></td>
 					<td><a href="#">Health Profile</a></td>
-					<td><a href="{{ asset('patients/edit\/') }}{{ $patient->id}}" class="btn btn-warning">Edit</a></td>
-					<td><a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn-xs btn-danger">X</a></td>
+					<td><a href="{{ asset('patients/edit\/') }}{{ $patient->id}}" class="btn btn-warning btn-xs">Edit</a></td>
+					<td>
+						<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete_confirmation">X</button>
+						<div class="modal fade" id="delete_confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+						      </div>
+						      <div class="modal-body">
+						        Are you sure you want to delete patient : {{ $patient->name }}
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        <a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn btn-primary">Delete</a>
+						        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					</td>
+					<!-- <td><a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn-xs btn-danger">X</a></td> -->
 				</tr>
 			@endforeach
 		</tbody>
