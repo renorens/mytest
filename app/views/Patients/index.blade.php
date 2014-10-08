@@ -20,9 +20,9 @@
 					<td>{{ $patient->dob }}</td>
 					<td><a href="{{ asset('appointment/patient\/') }}{{ $patient->id}}">Appointments</a></td>
 					<td><a href="#">Health Profile</a></td>
-					<td><a href="{{ asset('patients/edit\/') }}{{ $patient->id}}" class="btn btn-warning btn-xs">Edit</a></td>
+					<td><a href="{{ asset('patients/edit\/') }}{{ $patient->id}}"><i class="fa fa-pencil fa-fw"></i> Edit</a></td>
 					<td>
-						<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete_confirmation">X</button>
+						<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete_confirmation"><i class="fa fa-trash fa-fw"></i> </button>
 						<div class="modal fade" id="delete_confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						  <div class="modal-dialog">
 						    <div class="modal-content">
@@ -34,8 +34,8 @@
 						        Are you sure you want to delete patient : <b>{{ $patient->name }}?</b>
 						      </div>
 						      <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        <a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn btn-danger">Delete</a>
+						        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times fa-lg"></i> Close</button>
+						        <a href="{{ asset('patients/delete\/') }}{{ $patient->id}}" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
 						      </div>
 						    </div>
 						  </div>

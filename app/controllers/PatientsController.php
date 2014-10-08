@@ -82,8 +82,14 @@ class PatientsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$patient = Patient::whereId($id)->first();
+		$patient = Patient::find($id);
+		$patient->age = Static::calculateAge($patient->dob);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
+	}
+
+	public static function calculateAge($dob)
+	{
+		return date_diff(date_create($dob), date_create('today'))->y;
 	}
 
 	/**
@@ -118,7 +124,7 @@ class PatientsController extends \BaseController {
 			}
 		}
 		$patient->save();
-
+		$patient->age = Static::calculateAge($patient->dob);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}
 

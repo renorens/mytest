@@ -12,7 +12,7 @@ return array(
     'myclinic' => 'My Clinic',
     'logout' => 'Logout',
     'login' => 'Login',
-    'addpatient' => 'Add Patient',
+    'addpatient' => 'New Patient',
     'newappointment' => 'New Appointment',
     'legendNewPatient' => 'New Patient'
 );

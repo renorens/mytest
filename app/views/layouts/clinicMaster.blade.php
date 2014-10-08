@@ -7,6 +7,7 @@
 		<link rel="shortcut icon" href="{{ asset('images/favicon.ico')}}">
 		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootswatch.min.css') }}"> -->
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-switch.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 	</head>
     <body>
     	<div class="navbar navbar-default">
@@ -24,22 +25,13 @@
 		        <ul class="dropdown-menu">
 		          <li><a href="#">{{ trans('static.newappointment') }}</a></li>
 		          <li><a href="{{ asset('appointment/index')}}">Clinic Appointments</a></li>
-		          <!-- <li class="divider"></li> -->
-		          <!-- <li class="dropdown-header">Dropdown header</li> -->
-		          <!-- <li><a href="#">Separated link</a></li> -->
-		          <!-- <li><a href="#">One more separated link</a></li> -->
 		        </ul>
 		      </li>
 		      <li class="dropdown">
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ trans('static.patients') }}<b class="caret"></b></a>
 		        <ul class="dropdown-menu">
-		          <li><a href="{{ asset('patients/create')}}">{{ trans('static.addpatient') }}</a></li>
-		          <li><a href="{{ asset('patients/index')}}">All Patinets</a></li>
-		          <!-- <li><a href="#">Something else here</a></li> -->
-		          <!-- <li class="divider"></li> -->
-		          <!-- <li class="dropdown-header">Dropdown header</li> -->
-		          <!-- <li><a href="#">Separated link</a></li> -->
-		          <!-- <li><a href="#">One more separated link</a></li> -->
+		          <li><a href="{{ asset('patients/create')}}"><i class="fa fa-plus-square-o fa-sm"></i>&nbsp{{ trans('static.addpatient') }}</a></li>
+		          <li><a href="{{ asset('patients/index')}}"><i class="fa fa-list fa-sm"></i>&nbspAll Patinets</a></li>
 		        </ul>
 		      </li>
 		    </ul>
