@@ -43,7 +43,8 @@
 	    </div>
 <script type="text/javascript" src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('js/jssor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jssor.slider.js') }}"></script>
     <div class="container">
         @yield('content')
     </div>
