@@ -27,7 +27,7 @@ class CreatePatientsTable extends Migration {
 			$table->string('country');
 			$table->string('emergency_contact_name');
 			$table->string('emergency_contact_phone');
-			$table->string('emergenct_contact_relationship');
+			$table->string('emergency_contact_relationship');
 
 			$table->foreign('clinic_id')
                   ->references('id')

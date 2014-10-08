@@ -51,14 +51,10 @@ class PatientsController extends \BaseController {
 		$patient->dob = $inputs['dob'];
 
 		$clinic = Session::get('clinic');
-		// Session::put('patient', $patient);
-		
+
 		$patient = $clinic->patients()->save($patient);
-		// dd($patient->id);
 
 		return Redirect::action('PatientsController@edit', array('id'=> $patient->id));
-		// return View::make('Patients.editPatient', array('patient'=>$patient));
-		// return View::make('Patients.addressForm');
 	}
 
 	/**
@@ -84,6 +80,7 @@ class PatientsController extends \BaseController {
 	{
 		$patient = Patient::find($id);
 		$patient->age = Static::calculateAge($patient->dob);
+		dd($patient->healthProfile);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}
 
@@ -121,6 +118,18 @@ class PatientsController extends \BaseController {
 			}
 			if(Input::has('email')) {
 				$patient->email = Input::get('email');
+			}
+		}
+
+		if($form == 'emergencyForm') {
+			if(Input::has('emergencyName')) {
+				$patient->emergency_contact_name = Input::get('emergencyName');
+			}
+			if(Input::has('emergencyPhone')) {
+				$patient->emergency_contact_phone = Input::get('emergencyPhone');
+			}
+			if(Input::has('emergencyRelationship')) {
+				$patient->emergency_contact_relationship = Input::get('emergencyRelationship');
 			}
 		}
 		$patient->save();

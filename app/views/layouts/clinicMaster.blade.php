@@ -16,7 +16,10 @@
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
+		      @if (Session::has('clinic'))
 		    	<a class="navbar-brand" href="{{ asset('myClinic') }}">{{Session::get('clinic')->name}}</a>
+		      @endif
+
 		  </div>
 		  <div class="navbar-collapse collapse navbar-inverse-collapse">
 		    <ul class="nav navbar-nav">

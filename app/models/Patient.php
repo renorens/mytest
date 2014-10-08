@@ -11,13 +11,8 @@ class Patient extends \Eloquent {
 		return $this->belongsTo('Clinic');
 	}
 
-	public function personal_info()
+	public function healthProfile()
 	{
-		return $this->hasOne('personal_info');
-	}
-
-	public function medical_info()
-	{
-		return $this->hasOne('MedicalInfo');
+		return $this->hasOne('Health_profile');
 	}
 }
