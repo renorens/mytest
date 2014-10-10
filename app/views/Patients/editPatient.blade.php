@@ -295,7 +295,7 @@
                   &nbsp;
                 </div>
                 <div class="row">
-                @if ($patient->gender == 'female')
+                @if ($patient->gender == 'Female')
                   <div class="col-sm-2">
                     Pregnant
                   </div>

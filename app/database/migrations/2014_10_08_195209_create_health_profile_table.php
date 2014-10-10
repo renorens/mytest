@@ -36,6 +36,8 @@ class CreateHealthProfileTable extends Migration {
 			$table->string('kidney_disease_description');
 			$table->boolean('infections');
 			$table->string('infections_description');
+			$table->boolean('surgeries');
+			$table->string('surgeries_description');
 			$table->string('work_field');
 			
 			$table->foreign('patient_id')
