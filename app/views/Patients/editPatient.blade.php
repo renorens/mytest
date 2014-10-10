@@ -158,7 +158,9 @@
           {{$patient->emergency_contact_name}}
           </div>
           <div class="col-md-3">
+          @if ($patient->emergency_contact_phone != '')
           <i class="fa fa-mobile fa-lg"></i>&nbsp;{{"(".substr($patient->emergency_contact_phone, 0, 3).") ".substr($patient->emergency_contact_phone, 3, 3)."-".substr($patient->emergency_contact_phone,6)}}
+          @endif
           </div>
           <div class="col-md-3">
           {{$patient->emergency_contact_relationship}}
@@ -238,14 +240,171 @@
       <h3>Health Profile</h3>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-9">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#add_health_profile"><i class="fa fa-edit fa-lg"></i>&nbsp;Add/Edit</button>
+      <div class="modal fade" id="add_health_profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Add/Edit Health Profile</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" id="contact_form" method="POST" action="{{ asset('patients/update\/') }}{{ $patient->id}}">
+                <div class="row">
+                  <div class="col-sm-2">
+                    Diabetic
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="diabetic">
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-md-offset-2">
+                    Blood-Pressure
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="blloodPressure">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  &nbsp;
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    Smoker
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="smoker">
+                    </div>
+                  </div>
+                  <div class="col-sm-2 col-sm-offset-2">
+                    Hookah
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="hookah">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  &nbsp;
+                </div>
+                <div class="row">
+                @if ($patient->gender == 'female')
+                  <div class="col-sm-2">
+                    Pregnant
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="pregnant">
+                    </div>
+                  </div>
+                @else
+                  <div class="col-sm-2">
+                    Male?
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="pregnant">
+                    </div>
+                  </div>
+                @endif
+                  <div class="col-sm-2 col-sm-offset-2">
+                    Vascular
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="vascular">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  &nbsp;
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    Cancer
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="cancer">
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-md-offset-2">
+                    Recent Fractures
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="recentFractures">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  &nbsp;
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    Heart Disease
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="heartDisease">
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-md-offset-2">
+                    Kidney Disease
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="kidneyDisease">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  &nbsp;
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    Infections
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="infections">
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-md-offset-2">
+                    <label for="dob" class="col-lg-2 control-label">Work Field</label>
+                  </div>
+                  <div class="col-sm-2">
+                    <input type="text" name="workField" size="30" class="form-control" placeholder="Work Field">
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>  
+        </div>
+      </div>  
+    </div>
+  </div>
+  @if ($patient->healthProfile != null)
     <div class="row">
       <div class="col-sm-2">
         Diabetic
       </div>
       <div class="col-sm-2">
-        <!-- {{$patient->healthProfile()->diabetic}} -->
       </div>
     </div>
+  @else
+    <div class="row">
+      There is currently no health profile for this patient.
+    </div>
+  @endif
   </div>
 </div>
 </div>

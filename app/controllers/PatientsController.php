@@ -80,7 +80,6 @@ class PatientsController extends \BaseController {
 	{
 		$patient = Patient::find($id);
 		$patient->age = Static::calculateAge($patient->dob);
-		dd($patient->healthProfile);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}
 

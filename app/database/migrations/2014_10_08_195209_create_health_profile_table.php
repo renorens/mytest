@@ -12,7 +12,7 @@ class CreateHealthProfileTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('health_profile', function(Blueprint $table)
+		Schema::create('health_profiles', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->unsignedInteger('patient_id');
