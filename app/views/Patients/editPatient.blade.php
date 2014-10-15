@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-md-6">
           @if ($patient->gender == 'Male')
-            <h2><i class="fa fa-male fa-lg"></i>&nbsp;&nbsp;{{ $patient->name }}</h2>
+            <h2><i class="fa fa-male fa-lg text-primary"></i>&nbsp;&nbsp;{{ $patient->name }}</h2>
           @else
-            <h2><i class="fa fa-female fa-lg"></i>&nbsp;&nbsp;{{ $patient->name }}</h2>
+            <h2><i class="fa fa-female fa-lg text-danger"></i>&nbsp;&nbsp;{{ $patient->name }}</h2>
           @endif
           <h3>Age &nbsp;{{$patient->age}}</h3>
         </div>
@@ -254,19 +254,19 @@
               <form class="form-horizontal" id="contact_form" method="POST" action="{{ asset('patients/update\/') }}{{ $patient->id}}">
                 <div class="row">
                   <div class="col-sm-2">
-                    Diabetic
+                    <label for="diabetic">Diabetic</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="diabetic">
+                      <input type="checkbox" name="diabetic" id="diabetic">
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
-                    Blood-Pressure
+                    <label for="blloodPressure">Blood-Pressure</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="blloodPressure">
+                      <input type="checkbox" name="blloodPressure" id="blloodPressure">
                     </div>
                   </div>
                 </div>
@@ -275,19 +275,19 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-2">
-                    Smoker
+                    <label for="smoker">Smoker</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="smoker">
+                      <input type="checkbox" name="smoker" id="smoker">
                     </div>
                   </div>
                   <div class="col-sm-2 col-sm-offset-2">
-                    Hookah
+                    <label for="hookah">Hookah</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="hookah">
+                      <input type="checkbox" name="hookah" id="hookah">
                     </div>
                   </div>
                 </div>
@@ -297,16 +297,16 @@
                 <div class="row">
                 @if ($patient->gender == 'Female')
                   <div class="col-sm-2">
-                    Pregnant
+                    <label for="pregnant">Pregnant</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="pregnant">
+                      <input type="checkbox" name="pregnant" id="pregnant">
                     </div>
                   </div>
                 @else
                   <div class="col-sm-2">
-                    Male?
+                    <label for="">Male?</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
@@ -315,11 +315,11 @@
                   </div>
                 @endif
                   <div class="col-sm-2 col-sm-offset-2">
-                    Vascular
+                    <label for="vascular">Vascular</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="vascular">
+                      <input type="checkbox" name="vascular" id="vascular">
                     </div>
                   </div>
                 </div>
@@ -328,19 +328,19 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-2">
-                    Cancer
+                    <label for="cancer">Cancer</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="cancer">
+                      <input type="checkbox" name="cancer" id="cancer">
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
-                    Recent Fractures
+                    <label for="recentFractures">Recent Fractures</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="recentFractures">
+                      <input type="checkbox" name="recentFractures" id="recentFractures">
                     </div>
                   </div>
                 </div>
@@ -349,19 +349,19 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-2">
-                    Heart Disease
+                    <label for="heartDisease">Heart Disease</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="heartDisease">
+                      <input type="checkbox" id="heartDisease" name="heartDisease">
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
-                    Kidney Disease
+                    <label for="kidneyDisease">Kidney Disease</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="kidneyDisease">
+                      <input type="checkbox" id="kidneyDisease" name="kidneyDisease">
                     </div>
                   </div>
                 </div>
@@ -370,11 +370,32 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-2">
-                    Infections
+                    <label for="infections">Infections</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="infections">
+                      <input type="checkbox" name="infections" id="infections">
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-md-offset-2">
+                    <label for="surgeries">Surgeries</label>
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="surgeries" id="surgeries">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  &nbsp;
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    <label for="familyHistroy">Family History</label>
+                  </div>
+                  <div class="col-sm-2">
+                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      <input type="checkbox" name="familyHistroy" id="familyHistroy">
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
@@ -384,7 +405,14 @@
                     <input type="text" name="workField" size="30" class="form-control" placeholder="Work Field">
                   </div>
                 </div>
-
+                <div class="row">
+                  &nbsp;
+                </div>
+                <input type="hidden" name="form_name" value="healthProfileForm" >
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times fa-lg"></i> Close</button>
+                  <button type="submit" class="btn btn-primary">Save Health Profile</button>
+                </div>
               </form>
             </div>
           </div>  

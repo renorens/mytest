@@ -131,6 +131,11 @@ class PatientsController extends \BaseController {
 				$patient->emergency_contact_relationship = Input::get('emergencyRelationship');
 			}
 		}
+
+		if ( $form == 'healthProfileForm' ) {
+			$inputs = Input::all();
+			
+		}
 		$patient->save();
 		$patient->age = Static::calculateAge($patient->dob);
 		return View::make('Patients.editPatient', array('patient'=>$patient));

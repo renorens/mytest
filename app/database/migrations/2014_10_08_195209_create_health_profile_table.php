@@ -23,6 +23,8 @@ class CreateHealthProfileTable extends Migration {
 			$table->boolean('hookah');
 			$table->boolean('blood_pressure');
 			$table->boolean('pregnant');
+			$table->date('pregnancy_due_date');
+			$table->string('pregnancy_gender');
 			$table->string('pregnant_details');
 			$table->boolean('vascular');
 			$table->string('vascular_description');
@@ -38,6 +40,8 @@ class CreateHealthProfileTable extends Migration {
 			$table->string('infections_description');
 			$table->boolean('surgeries');
 			$table->string('surgeries_description');
+			$table->boolean('family_history');
+			$table->string('family_history_description');
 			$table->string('work_field');
 			
 			$table->foreign('patient_id')
