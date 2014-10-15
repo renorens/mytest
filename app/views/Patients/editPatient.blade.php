@@ -262,11 +262,11 @@
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
-                    <label for="blloodPressure">Blood-Pressure</label>
+                    <label for="bloodPressure">Blood-Pressure</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="blloodPressure" id="blloodPressure">
+                      <input type="checkbox" name="bloodPressure" id="bloodPressure">
                     </div>
                   </div>
                 </div>
@@ -310,7 +310,7 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="pregnant">
+                      <input type="checkbox" name="male">
                     </div>
                   </div>
                 @endif

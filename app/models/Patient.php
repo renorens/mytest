@@ -13,6 +13,6 @@ class Patient extends \Eloquent {
 
 	public function healthProfile()
 	{
-		return $this->hasOne('Health_profile');
+		return $this->hasOne('HealthProfile');
 	}
 }

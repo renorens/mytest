@@ -1,5 +1,7 @@
 <?php
 
+use \app\models\HealthProfile;
+
 class PatientsController extends \BaseController {
 
 	/**
@@ -134,9 +136,54 @@ class PatientsController extends \BaseController {
 
 		if ( $form == 'healthProfileForm' ) {
 			$inputs = Input::all();
-			
+			$profile = new HealthProfile;
+
+			if ( Input::has('diabetic') ) {
+				$profile->diabetic = Input::get('diabetic');
+			}
+			if ( Input::has('bloodPressure') ) {
+				$profile->blood_pressure = Input::get('bloodPressure');
+			}
+			if ( Input::has('smoker') ) {
+				$profile->smoker = Input::get('smoker');
+			}
+			if ( Input::has('hookah') ) {
+				$profile->hookah = Input::get('hookah');
+			}
+			if ( Input::has('pregnant') ) {
+				$profile->pregnant = Input::get('pregnant');
+			}
+			if ( Input::has('vascular') ) {
+				$profile->vascular = Input::get('vascular');
+			}
+			if ( Input::has('cancer') ) {
+				$profile->cancer = Input::get('cancer');
+			}
+			if ( Input::has('recentFractures') ) {
+				$profile->recent_fractures = Input::get('recentFractures');
+			}
+			if ( Input::has('heartDisease') ) {
+				$profile->heart_disease = Input::get('heartDisease');
+			}
+			if ( Input::has('kidneyDisease') ) {
+				$profile->kidney_disease = Input::get('kidneyDisease');
+			}
+			if ( Input::has('infections') ) {
+				$profile->heart_disease = Input::get('infections');
+			}
+			if ( Input::has('surgeries') ) {
+				$profile->surgeries = Input::get('surgeries');
+			}
+			if ( Input::has('familyHistroy') ) {
+				$profile->family_history = Input::get('familyHistroy');
+			}
+			if ( Input::has('workField') ) {
+				$profile->work_field = Input::get('workField');
+			}
 		}
+
 		$patient->save();
+		// $patient->healthProfile()->save($profile);
 		$patient->age = Static::calculateAge($patient->dob);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}
