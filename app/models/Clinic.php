@@ -1,6 +1,8 @@
-<?php
+<?php namespace App\Models;
 
-class Clinic extends \Eloquent {
+use \LaravelBook\Ardent\Ardent;
+
+class Clinic extends Ardent {
 
 	// Add your validation rules here
 	public static $rules = [
@@ -17,12 +19,12 @@ class Clinic extends \Eloquent {
 
 	public function appointments()
     {
-    	return $this->hasMany('Appointment');
+    	return $this->hasMany('App\Models\Appointment');
     }
 
     public function patients()
     {
-    	return $this->hasMany('Patient');
+    	return $this->hasMany('App\Models\Patient');
     }
 
 }

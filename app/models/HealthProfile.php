@@ -1,6 +1,6 @@
-<?php
-
-class HealthProfile extends \Eloquent {
+<?php namespace App\Models;
+use \LaravelBook\Ardent\Ardent;
+class HealthProfile extends Ardent {
 	protected $fillable = ['diabetic','diabetic_type','diabetic_description','blood_pressure',
 						'smoker','hookah','pregnant','pregnant_details','pregnancy_due_date',
 						'pregnancy_gender','vascular','vascular_description',
@@ -11,6 +11,6 @@ class HealthProfile extends \Eloquent {
 
 	public  function patient()
 	{
-		return $this->belongsTo('Patient');
+		return $this->belongsTo('App\Models\Patient');
 	}
 }

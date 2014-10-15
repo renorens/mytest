@@ -11,6 +11,6 @@ class User extends Eloquent implements ConfideUserInterface
 
     public function clinic()
     {
-    	return $this->belongsTo('Clinic');
+    	return $this->belongsTo('App\Models\Clinic');
     }
 }

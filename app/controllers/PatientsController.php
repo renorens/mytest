@@ -1,6 +1,8 @@
 <?php
 
-use \app\models\HealthProfile;
+use \App\Models\HealthProfile;
+use \App\Models\Clinic;
+use \App\Models\Patient;
 
 class PatientsController extends \BaseController {
 
@@ -183,7 +185,7 @@ class PatientsController extends \BaseController {
 		}
 
 		$patient->save();
-		// $patient->healthProfile()->save($profile);
+		$patient->healthProfile()->save($profile);
 		$patient->age = Static::calculateAge($patient->dob);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}

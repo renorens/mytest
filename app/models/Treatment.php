@@ -1,6 +1,6 @@
-<?php
-
-class Treatment extends \Eloquent {
+<?php namespace App\Models;
+use \LaravelBook\Ardent\Ardent;
+class Treatment extends Ardent {
 	protected $fillable = [];
 
 	public function appointment()

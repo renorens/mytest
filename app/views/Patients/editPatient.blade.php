@@ -426,6 +426,7 @@
         Diabetic
       </div>
       <div class="col-sm-2">
+        {{$patient->healthProfile->diabetic}}
       </div>
     </div>
   @else

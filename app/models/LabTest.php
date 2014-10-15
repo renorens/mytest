@@ -1,10 +1,10 @@
-<?php
-
-class LabTest extends \Eloquent {
+<?php namespace App\Models;
+use \LaravelBook\Ardent\Ardent;
+class LabTest extends Ardent {
 	protected $fillable = [];
 
 	public function treatment()
 	{
-		return $this->belongsTo('Treatment');
+		return $this->belongsTo('App\Models\Treatment');
 	}
 }

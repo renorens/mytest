@@ -1,4 +1,6 @@
 <?php
+
+use \App\Models\Clinic;
 /**
  * UsersController Class
  *
