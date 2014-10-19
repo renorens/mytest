@@ -1,7 +1,6 @@
 <?php
 
-
-
+use \App\Models\Clinic;
 /**
  * Class UserRepository
  *
@@ -33,6 +32,7 @@ class UserRepository
         // Generate a random confirmation code
         $user->confirmation_code     = md5(uniqid(mt_rand(), true));
         $clinic = Clinic::with('users')->whereId(array_get($input, 'clinic'))->get();
+        // dD($input);
         // Save if valid. Password field will be hashed before save
         $clinic[0]->users()->save($user);
 

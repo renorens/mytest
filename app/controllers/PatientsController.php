@@ -53,10 +53,13 @@ class PatientsController extends \BaseController {
 		$inputs = Input::all();
 		$patient->name = $inputs['name'];
 		$patient->dob = $inputs['dob'];
+		$patient->patient_since = \Carbon\Carbon::now();
 
 		$clinic = Session::get('clinic');
+		$profile = new HealthProfile;
 
 		$patient = $clinic->patients()->save($patient);
+		$patient->healthProfile()->save($profile);
 
 		return Redirect::action('PatientsController@edit', array('id'=> $patient->id));
 	}
@@ -102,7 +105,8 @@ class PatientsController extends \BaseController {
 	public function update($id)
 	{
 		$form = Input::get('form_name');
-		$patient = Patient::find($id);
+		$patient = Patient::with('healthProfile')->find($id);
+
 		if($form == 'addressForm') {
 			if(Input::has('address')) {
 				$patient->address = Input::get('address');
@@ -137,8 +141,9 @@ class PatientsController extends \BaseController {
 		}
 
 		if ( $form == 'healthProfileForm' ) {
+
 			$inputs = Input::all();
-			$profile = new HealthProfile;
+			$profile = $patient->healthProfile;
 
 			if ( Input::has('diabetic') ) {
 				$profile->diabetic = Input::get('diabetic');
@@ -182,10 +187,11 @@ class PatientsController extends \BaseController {
 			if ( Input::has('workField') ) {
 				$profile->work_field = Input::get('workField');
 			}
+
+			$patient->healthProfile()->save($profile);
 		}
 
 		$patient->save();
-		$patient->healthProfile()->save($profile);
 		$patient->age = Static::calculateAge($patient->dob);
 		return View::make('Patients.editPatient', array('patient'=>$patient));
 	}

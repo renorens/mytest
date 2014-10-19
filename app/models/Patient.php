@@ -4,7 +4,7 @@ class Patient extends Ardent {
 	private $age = '';
 	protected $fillable = ['name', 'dob', 'email', 'mobile', 'phone', 'gender',
 						   'emergency_contact_name', 'address','city','country','emergency_contact_phone',
-						   'emergenct_contact_relationship'];
+						   'emergenct_contact_relationship','patient_since'];
 
 	public  function clinic()
 	{

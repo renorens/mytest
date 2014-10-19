@@ -25,6 +25,7 @@ class CreatePatientsTable extends Migration {
 			$table->string('address');
 			$table->string('city');
 			$table->string('country');
+			$table->date('patient_since');
 			$table->string('emergency_contact_name');
 			$table->string('emergency_contact_phone');
 			$table->string('emergency_contact_relationship');

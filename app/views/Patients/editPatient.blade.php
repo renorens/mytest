@@ -10,10 +10,12 @@
             <h2><i class="fa fa-female fa-lg text-danger"></i>&nbsp;&nbsp;{{ $patient->name }}</h2>
           @endif
           <h3>Age &nbsp;{{$patient->age}}</h3>
+          <div class="col-md-6">
+            <p class="text-primary"> Patient Since <b>{{ $patient->patient_since }}</b> </p>
+          </div>
         </div>
         <div class="col-md-6">
           <h2>Contact Info</h2>
-          <!-- <div class="container"> -->
             <div class="row">
               <div class="col-sm-3">
               @if ($patient->address != '')
@@ -258,7 +260,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->diabetic == 'on')
+                      <input type="checkbox" name="diabetic" id="diabetic" checked>
+                      @else
                       <input type="checkbox" name="diabetic" id="diabetic">
+                      @endif
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
@@ -266,7 +272,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->blood_pressure == 'on')
+                      <input type="checkbox" name="bloodPressure" id="bloodPressure" checked>
+                      @else
                       <input type="checkbox" name="bloodPressure" id="bloodPressure">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -279,7 +289,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->smoker == 'on')
+                      <input type="checkbox" name="smoker" id="smoker" checked>
+                      @else
                       <input type="checkbox" name="smoker" id="smoker">
+                      @endif
                     </div>
                   </div>
                   <div class="col-sm-2 col-sm-offset-2">
@@ -287,7 +301,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->hookah == 'on')
+                      <input type="checkbox" name="hookah" id="hookah" checked>
+                      @else
                       <input type="checkbox" name="hookah" id="hookah">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -301,16 +319,24 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->pregnant == 'on')
+                      <input type="checkbox" name="pregnant" id="pregnant" checked>
+                      @else
                       <input type="checkbox" name="pregnant" id="pregnant">
+                      @endif
                     </div>
                   </div>
                 @else
                   <div class="col-sm-2">
-                    <label for="">Male?</label>
+                    <label for="pregnant">Male?</label>
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
-                      <input type="checkbox" name="male">
+                      @if ($patient->healthProfile->pregnant == 'on')
+                      <input type="checkbox" name="pregnant" id="pregnant" checked>
+                      @else
+                      <input type="checkbox" name="pregnant" id="pregnant">
+                      @endif
                     </div>
                   </div>
                 @endif
@@ -319,7 +345,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->vascular == 'on')
+                      <input type="checkbox" name="vascular" id="vascular" checked>
+                      @else
                       <input type="checkbox" name="vascular" id="vascular">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -332,7 +362,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->cancer == 'on')
+                      <input type="checkbox" name="cancer" id="cancer" checked>
+                      @else
                       <input type="checkbox" name="cancer" id="cancer">
+                      @endif
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
@@ -340,7 +374,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->recent_fractures == 'on')
+                      <input type="checkbox" name="recentFractures" id="recentFractures" checked>
+                      @else
                       <input type="checkbox" name="recentFractures" id="recentFractures">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -353,7 +391,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->heart_disease == 'on')
+                      <input type="checkbox" id="heartDisease" name="heartDisease" checked>
+                      @else
                       <input type="checkbox" id="heartDisease" name="heartDisease">
+                      @endif
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
@@ -361,7 +403,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->kidney_disease == 'on')
+                      <input type="checkbox" id="kidneyDisease" name="kidneyDisease" checked>
+                      @else
                       <input type="checkbox" id="kidneyDisease" name="kidneyDisease">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -374,7 +420,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->infections == 'on')
+                      <input type="checkbox" name="infections" id="infections" checked>
+                      @else
                       <input type="checkbox" name="infections" id="infections">
+                      @endif
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
@@ -382,7 +432,11 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->surgeries == 'on')
+                      <input type="checkbox" name="surgeries" id="surgeries" checked>
+                      @else
                       <input type="checkbox" name="surgeries" id="surgeries">
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -395,14 +449,22 @@
                   </div>
                   <div class="col-sm-2">
                     <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                      @if ($patient->healthProfile->family_history == 'on')
+                      <input type="checkbox" name="familyHistroy" id="familyHistroy" checked>
+                      @else
                       <input type="checkbox" name="familyHistroy" id="familyHistroy">
+                      @endif
                     </div>
                   </div>
                   <div class="col-md-2 col-md-offset-2">
                     <label for="dob" class="col-lg-2 control-label">Work Field</label>
                   </div>
                   <div class="col-sm-2">
+                    @if ($patient->healthProfile->work_field != '')
+                    <input type="text" name="workField" size="30" class="form-control" placeholder="Work Field" value="{{ $patient->healthProfile->work_field }}">
+                    @else
                     <input type="text" name="workField" size="30" class="form-control" placeholder="Work Field">
+                    @endif
                   </div>
                 </div>
                 <div class="row">
