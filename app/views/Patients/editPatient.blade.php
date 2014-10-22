@@ -259,7 +259,7 @@
                     <label for="diabetic">Diabetic</label>
                   </div>
                   <div class="col-sm-2">
-                    <div id="change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
+                    <div id="diabetic-change-color-switch" data-on-label="YES" data-off-label="NO" class="make-switch switch-small" data-on="danger" data-off="success">
                       @if ($patient->healthProfile->diabetic == 'on')
                       <input type="checkbox" name="diabetic" id="diabetic" checked>
                       @else
@@ -283,6 +283,43 @@
                 <div class="row">
                   &nbsp;
                 </div>
+
+                <div class="row" id="diabeticTypeDesc">
+                  <div class="col-sm-2">
+                    <label for="diabeticType">Type</label>
+                  </div>
+                  <div class="col-sm-2">
+                    <select class="form-control" id="diabeticType">
+                      <option value="type1">Type 1</option>
+                      <option value="type2">Type 2</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 col-md-offset-2">
+                    <label for="diabeticDesc">Notes</label>
+                  </div>
+                  <div class="col-sm-2">
+                    <textarea class="form-control" rows="1" id="textArea" id="diabeticDesc" name="diabeticDesc"></textarea>
+                  </div>
+                </div>
+
+                <script type="text/javascript">
+
+$(document).ready(function() {
+    $('#diabetic-change-color-switch').on('switch-change', function (e, data) {
+        var $el = $(data.el)
+          , value = data.value;
+        if(value){//this is true if the switch is on
+           $('#diabeticTypeDesc').show();
+        }else{
+           $('#diabeticTypeDesc').hide();
+        }
+    });
+});
+                </script>
+                <div class="row">
+                  &nbsp;
+                </div>
+                
                 <div class="row">
                   <div class="col-sm-2">
                     <label for="smoker">Smoker</label>
@@ -484,12 +521,12 @@
   </div>
   @if ($patient->healthProfile != null)
     <div class="row">
-      <div class="col-sm-2">
-        Diabetic
+      @if ($patient->healthProfile->diabetic == 'on')
+      <div class="col-md-3">
+        <p class="text-danger">Diabetic ({{ $patient->healthProfile->diabetic_type }})</p> 
+        <p class="text-danger">{{ $patient->healthProfile->diabetic_description }}
       </div>
-      <div class="col-sm-2">
-        {{$patient->healthProfile->diabetic}}
-      </div>
+      @endif
     </div>
   @else
     <div class="row">
