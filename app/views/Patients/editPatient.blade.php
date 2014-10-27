@@ -316,7 +316,7 @@ $(document).ready(function() {
     });
 });
                 </script>
-                <div class="row">
+                <div class="row" id="diabeticSpace">
                   &nbsp;
                 </div>
                 
